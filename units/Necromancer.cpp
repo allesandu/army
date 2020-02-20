@@ -1,0 +1,19 @@
+#include "Necromancer.h"
+#include "../states/NecromancerState.h"
+#include "../attacks/MagicAttack.h"
+
+Necromancer::Necromancer() : Unit() {
+    this->uState = new NecromancerState();
+    this->uAttack = new MagicAttack();
+    // std::cout << "Necromancer constructor!" << std::endl;
+}
+
+Necromancer::~Necromancer() {
+    std::cout << "Necromancer destructor!" << std::endl;
+}
+
+void Necromancer::attack(Unit* enemy) {
+    std::cout << "Necromancer does attachment with attacking GGGG! (class <Necromancer>)" << std::endl;
+    enemy->attachObserver(this);
+    this->uAttack->attack(this, enemy);
+}
