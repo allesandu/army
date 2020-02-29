@@ -10,7 +10,7 @@ class BaseSpell {
         std::string spellType;
         
     public:
-        BaseSpell(int cost = 0, int spPower = 0, const std::string spName = "noSpell", const std::string spType = "noType");
+        BaseSpell(int spCost = 0, int spPower = 0, const std::string& spName = "noSpell", const std::string& spType = "noType");
         virtual ~BaseSpell();
         
         int getSpellCost() const;

@@ -12,7 +12,8 @@ enum class HP {
     HEALER = 75,
     PRIEST = 90,
     WARLOCK = 100,
-    NECROMANCER = 190
+    NECROMANCER = 190,
+    DEMON = 155
 };
 
 enum class DMG {
@@ -26,7 +27,8 @@ enum class DMG {
     HEALER = 35,
     PRIEST = 25,
     WARLOCK = 40,
-    NECROMANCER = 110
+    NECROMANCER = 110,
+    DEMON = 55
 };
 
 enum class MAGIC {
@@ -38,13 +40,23 @@ enum class MAGIC {
 };
 
 enum class COST {
-    RESTORE = 30,
-    MAGICARROW = 40
+    RESTOREHP = 30,
+    MAGICARROW = 35,
+    FIREBALL = 40
 };
 
 enum class POWER {
-    RESTORE = 25,
-    MAGICARROW = 35
+    RESTOREHP = 20,
+    MAGICARROW = 25,
+    FIREBALL = 35
+};
+
+// enum class SPELL {
+enum SPELL {
+    BASESPELL = 0,
+    RESTOREHP,
+    MAGICARROW,
+    FIREBALL
 };
 
 #endif // CONFIG_H

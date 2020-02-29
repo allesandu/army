@@ -5,8 +5,11 @@
 
 class MagicArrow : public BaseSpell {
     public:
-        MagicArrow(int cost = (int) COST::MAGICARROW, int spPower = (int) POWER::MAGICARROW,
-            const std::string spName = "MagicArrow", const std::string spType = "BATTLE");
+        MagicArrow(int spCost = (int) COST::MAGICARROW,
+                int spPower = (int) POWER::MAGICARROW,
+                const std::string& spName = "MagicArrow",
+                const std::string& spType = "BATTLE");
+        
         virtual ~MagicArrow();
 };
 

@@ -1,16 +1,12 @@
 #include "SpellBook.h"
-#include "RestoreHP.h"
-#include "MagicArrow.h"
-#include <iostream>
-#include <map>
 
 SpellBook::SpellBook() {
-    this->spellList = new std::map<int, BaseSpell*>();  // HOW to deal with key as SpellID(int)? Maybe name???
+    this->spellList = new std::map<int, BaseSpell*>();
     
-    this->spellList->insert(std::pair<int, BaseSpell*>(1, new BaseSpell()));
-    this->spellList->insert(std::pair<int, BaseSpell*>(2, new RestoreHP()));
-    this->spellList->insert(std::pair<int, BaseSpell*>(3, new MagicArrow()));
-    // std::cout << "Map list created!" << std::endl;
+    this->spellList->insert(std::pair<int, BaseSpell*>(SPELL::FIREBALL, new FireBall()));
+    this->spellList->insert(std::pair<int, BaseSpell*>(SPELL::BASESPELL, new BaseSpell()));
+    this->spellList->insert(std::pair<int, BaseSpell*>(SPELL::RESTOREHP, new RestoreHP()));
+    this->spellList->insert(std::pair<int, BaseSpell*>(SPELL::MAGICARROW, new MagicArrow()));
 }
 
 SpellBook::~SpellBook() {
@@ -21,6 +17,7 @@ int SpellBook::getSpellCount() const {
     return this->spellList->size();
 }
 
+//----------------------------------------------
 int SpellBook::getSpellCost(int spellID) const {
     return this->spellList->find(spellID)->second->getSpellCost();
 }
@@ -58,12 +55,12 @@ const std::map<int, BaseSpell*>::iterator SpellBook::getEnd() const{
 std::ostream& operator<<(std::ostream& out, const SpellBook& spBook) {
     std::map<int, BaseSpell*>::iterator it;
     
-    out << "ooooooooooooooooooooo ========= MAGIC BOOK ====== oooooooooooooooooooo" << std::endl;
+    out << "oooooooooooooooooo ======= MAGIC BOOK ====== ooooooooooooooooo" << std::endl;
     for ( it = spBook.getBegin(); it != spBook.getEnd(); it++ ) {
-        out << "SpellID = " << it->first << " : ";
+        out << "# = " << it->first << " : ";
         out << *(it->second) << std:: endl;
     }
-    out << "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo" << std::endl;
+    out << "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo" << std::endl;
     
     return out;
 }

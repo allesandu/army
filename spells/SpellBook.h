@@ -1,9 +1,14 @@
 #ifndef SPELLBOOK_H
 #define SPELLBOOK_H
 #include <map>
+#include "../config.h"
 #include "BaseSpell.h"
+#include "RestoreHP.h"
+#include "MagicArrow.h"
+#include "FireBall.h"
+#include <iostream>
 
-class SpellBook { // HOW to deal with key as SpellID(int)? Maybe name???
+class SpellBook {
     protected:
         std::map<int, BaseSpell*>* spellList;
         
@@ -13,6 +18,7 @@ class SpellBook { // HOW to deal with key as SpellID(int)? Maybe name???
         
         int getSpellCount() const;
         
+        //----------------------------------
         int getSpellCost(int spellID) const;
         int getSpellPower(int spellID) const;
         const std::string getSpellName(int spellID) const;
@@ -24,6 +30,7 @@ class SpellBook { // HOW to deal with key as SpellID(int)? Maybe name???
         
         const std::map<int, BaseSpell*>::iterator getBegin() const;
         const std::map<int, BaseSpell*>::iterator getEnd() const;
+        
 };
 
 std::ostream& operator<<(std::ostream& out, const SpellBook& spBook);

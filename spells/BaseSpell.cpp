@@ -1,8 +1,8 @@
 #include "BaseSpell.h"
 #include <iostream>
 
-BaseSpell::BaseSpell(int cost, int spPower, const std::string spName, const std::string spType) {
-    this->spellCost = cost;
+BaseSpell::BaseSpell(int spCost, int spPower, const std::string& spName, const std::string& spType) {
+    this->spellCost = spCost;
     this->spellPower = spPower;
     this->spellName = spName;
     this->spellType = spType;

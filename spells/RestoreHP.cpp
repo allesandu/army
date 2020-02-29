@@ -1,7 +1,7 @@
 #include "RestoreHP.h"
 
-RestoreHP::RestoreHP(int cost, int spPower, const std::string spName, const std::string spType) 
-    : BaseSpell(cost, spPower, spName, spType) {
+RestoreHP::RestoreHP(int spCost, int spPower, const std::string& spName, const std::string& spType) 
+    : BaseSpell(spCost, spPower, spName, spType) {
         // std::cout << "Restore constructor" << std::endl;
     }
 
