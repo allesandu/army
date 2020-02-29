@@ -6,6 +6,7 @@
 #include "IObservable.h"
 #include "../states/State.h"
 #include "../attacks/BaseAttack.h"
+#include "../Exceptions.h"
 #include "../config.h"
 
 class BaseAttack;

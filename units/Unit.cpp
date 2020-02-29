@@ -1,4 +1,4 @@
-#include <iostream>
+// #include <iostream>
 #include "Unit.h"
 #include "../states/VampireState.h"
 
@@ -68,15 +68,17 @@ State* Unit::getState(){
 }
 
 void Unit::takeDamage(int uDmg) {
-    int finalHP = this->getHitPoints() - uDmg;
+    int finalDmg = this->getHitPoints();
+    int finalHP = finalDmg - uDmg;
     
-    if ( finalHP < 1 ) {
+    if ( finalHP < 0 ) {
         this->Notify();
-        
-        // delete this; // HOW to deal with Unit death ???????????!!!!!!!!!!!!!1
     } else {
-        this->uState->takeDamage(uDmg);
+        finalDmg = uDmg;
+        // this->uState->takeDamage(uDmg);
     }
+    
+    this->uState->takeDamage(finalDmg);
 }
 
 void Unit::takeHitPoints(int enemyHP) {
@@ -96,6 +98,9 @@ void Unit::setAttack(BaseAttack* newAttack) {
 }
 
 void Unit::attack(Unit* enemy) {
+    if ( enemy->getHitPoints() == 0 ) {
+        throw EnemyIsDead();
+    }
     // std::cout << "Got unit attack!" << std::endl;
     this->uAttack->attack(this, enemy);
 }
