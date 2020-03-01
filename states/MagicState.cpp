@@ -56,3 +56,7 @@ void MagicState::takeHitPoints(Unit* caster, int spellID, Unit* target) {
     //     this->hitPoints = newHP;
     // }
 }
+
+void MagicState::summon() {
+    std::cout << "0000 - you are NOT WARLOCK (class <MagicState>)" << std::endl;
+}

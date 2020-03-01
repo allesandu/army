@@ -4,4 +4,6 @@ Demon::Demon() : Soldier() {
     this->uState = new DemonState();
 }
 
-Demon::~Demon() {};
+Demon::~Demon() {
+    std::cout << "Demon destructor!" << std::endl;
+};

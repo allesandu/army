@@ -17,6 +17,7 @@
 #include "states/WerewolfState.h"
 #include "states/WolfState.h"
 #include "states/MagicState.h"
+#include "states/WarlockState.h" // delete afte testing
 #include "spells/BaseSpell.h"
 #include "spells/RestoreHP.h"
 #include "spells/SpellBook.h"
@@ -52,6 +53,32 @@ int main() {
     // delete d1;
     // std::cout << "__________________________________________________________" << std::endl;
     
+    Warlock* wl1 = new Warlock();
+    std::cout << *wl1;
+    
+    wl1->cast(); // add spellID parametr
+    wl1->cast(); // add spellID parametr
+    
+    delete wl1;
+    std::cout << "__________________________________________________________" << std::endl;
+    
+    // std::cout << "__________________________________________________________" << std::endl;
+    // WarlockState* wlState = new WarlockState();
+    // std::cout << *wlState << std::endl;
+    // std::cout << "__________________________________________________________" << std::endl;
+    // wlState->addDemon();
+    // wlState->addDemon();
+    // wlState->addDemon();
+    
+    // wlState->getDemonArmy();
+    // delete wlState;
+    // std::cout << "__________________________________________________________" << std::endl;
+    
+    // d1->getState()->getDemonArmy();
+    
+    
+    // std::cout << "__________________________________________________________" << std::endl;
+    
     // Soldier* s1 = new Soldier();
     // std::cout << *s1 << std::endl;
     // // s1->abilityInner();
@@ -78,7 +105,7 @@ int main() {
     // std::cout << *ww1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
     
-    Wizard* w1 = new Wizard();
+    // Wizard* w1 = new Wizard();
     // std::cout << *w1;
     // std::cout << "__________________________________________________________" << std::endl;
     // std::cout << *(w1->getState()) << std::endl;
@@ -91,7 +118,7 @@ int main() {
     // std::cout << "certain spell costs {[" << ms->getSpellCost(3) << "]} spellpoints" << std::endl;
     // delete ms;
     
-    Healer* h1 = new Healer();
+    // Healer* h1 = new Healer();
     // std::cout << *h1;
     // std::cout << "__________________________________________________________" << std::endl;
     // std::cout << *(h1->getState()) << std::endl;
@@ -105,21 +132,21 @@ int main() {
     
     // w1->cast(2, s1);
     
-    std::cout << *w1 << *h1 << std::endl;
-    std::cout << "==========================================================" << std::endl;
-    h1->attack(w1);
+    // std::cout << *w1 << *h1 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
+    // h1->attack(w1);
     // h1->cast(SPELL::FIREBALL, b1);
     
-    std::cout << *w1 << *h1 << std::endl;
-    std::cout << "==========================================================" << std::endl;
-    h1->attack(w1);
-    
-    std::cout << *w1 << *h1 << std::endl;
-    std::cout << "==========================================================" << std::endl;
-    h1->attack(w1);
+    // std::cout << *w1 << *h1 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
     // h1->attack(w1);
     
-    std::cout << *w1 << *h1 << std::endl;
+    // std::cout << *w1 << *h1 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
+    // h1->attack(w1);
+    // h1->attack(w1);
+    
+    // std::cout << *w1 << *h1 << std::endl;
     // Warlock* wl1 = new Warlock();
     // std::cout << *wl1;
     // std::cout << "==========================================================" << std::endl;
@@ -169,8 +196,8 @@ int main() {
     // delete v1;
     // delete ww1;
     
-    delete w1;
-    delete h1;
+    // delete w1;
+    // delete h1;
     // delete p1;
     // delete wl1;
     // delete nm1;

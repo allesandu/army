@@ -127,6 +127,12 @@ void Unit::cast(int spellID, Unit* target) {
     }
 }
 
+void Unit::cast() { // add spellID parametr
+    if ( this->getName() == "WARLOCK" ) {
+        this->uState->summon();
+    }
+}
+
 void Unit::abilityInner() {
     std::cout << "0000 - attempt to change STATE (class <Unit>)" << std::endl;
     this->uState->transform();

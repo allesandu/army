@@ -30,6 +30,8 @@ class MagicState : public State {
         virtual int getBattleIndex() const;
         
         virtual void takeHitPoints(Unit* caster, int spellID, Unit* target);
+        
+        virtual void summon();
 };
 
 #endif // MAGICSTATE_H

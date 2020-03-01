@@ -82,6 +82,10 @@ void State::transform() {
     std::cout << "0000 - no STATE changing (class <State>)" << std::endl;
 }
 
+void State::summon() {
+    std::cout << "0000 - you are NOT WARLOCK (class <State>)" << std::endl;
+}
+
 std::ostream& operator<<(std::ostream& out, const State& state) {
     out << "State info: <" << state.getName() << "> ";
     out << "with life =" << state.getHitPoints();

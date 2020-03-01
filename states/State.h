@@ -33,6 +33,7 @@ class State {
         virtual void takeHitPoints(Unit* caster, int spellID, Unit* target);
         void setState(State* newState);
         virtual void transform();
+        virtual void summon();
         
 };
 
