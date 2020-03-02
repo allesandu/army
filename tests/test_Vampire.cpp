@@ -9,4 +9,6 @@ TEST_CASE( "test Vampire", "[Vampire]" ) {
     REQUIRE( v1->getMaxHitPoints() == 200);
     REQUIRE( v1->getDamage() == 100 );
     REQUIRE( v1->getMagicPower() == 0 );
+    REQUIRE( v1->getState()->getSpellCost(4) == 0 );
+    REQUIRE( v1->getState()->getSpellPower(4) == 0 );
 }

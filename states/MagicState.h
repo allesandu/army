@@ -24,6 +24,7 @@ class MagicState : public State {
         virtual int getSpellPower(int spellID) const;
         virtual const std::string getSpellName(int spellID) const;
         virtual const std::string getSpellType(int spellID) const;
+        virtual void useMagicPower(int spCost);
         
         virtual int getMagicPower() const;
         virtual int getHealIndex() const;

@@ -24,14 +24,18 @@ class State {
         virtual int getMagicPower() const;
         virtual int getHealIndex() const;
         virtual int getBattleIndex() const;
+        virtual void useMagicPower(int spCost);
         
+        virtual int getSpellCost(int spellID) const;
         virtual int getSpellPower(int spellID) const;
         virtual const std::string getSpellType(int spellID) const;
         
         void takeDamage(int stateDmg);
         void takeHitPoints(int addHP);
         virtual void takeHitPoints(Unit* caster, int spellID, Unit* target);
+        
         void setState(State* newState);
+        
         virtual void transform();
         virtual void summon();
         

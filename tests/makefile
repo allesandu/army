@@ -42,6 +42,7 @@ compile_all:
 	$(CXX) $(CXXFLAGS) ../spells/RestoreHP.cpp
 	$(CXX) $(CXXFLAGS) ../spells/MagicArrow.cpp
 	$(CXX) $(CXXFLAGS) ../spells/FireBall.cpp
+	$(CXX) $(CXXFLAGS) ../spells/SummonSpell.cpp
 	$(CXX) $(CXXFLAGS) test_Soldier.cpp
 	$(CXX) $(CXXFLAGS) test_Rogue.cpp
 	$(CXX) $(CXXFLAGS) test_Berserker.cpp
@@ -53,6 +54,7 @@ compile_all:
 	$(CXX) $(CXXFLAGS) test_Warlock.cpp
 	$(CXX) $(CXXFLAGS) test_Necromancer.cpp
 	$(CXX) $(CXXFLAGS) test_Demon.cpp
+	$(CXX) $(CXXFLAGS) test_SummonSpell.cpp
 	$(CXX) $(CXXFLAGS) main.cpp
 all:compile_all
 	$(CXX) *.o -o test.out

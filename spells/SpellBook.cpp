@@ -7,6 +7,7 @@ SpellBook::SpellBook() {
     this->spellList->insert(std::pair<int, BaseSpell*>(SPELL::BASESPELL, new BaseSpell()));
     this->spellList->insert(std::pair<int, BaseSpell*>(SPELL::RESTOREHP, new RestoreHP()));
     this->spellList->insert(std::pair<int, BaseSpell*>(SPELL::MAGICARROW, new MagicArrow()));
+    this->spellList->insert(std::pair<int, BaseSpell*>(SPELL::SUMMONSPELL, new SummonSpell()));
 }
 
 SpellBook::~SpellBook() {

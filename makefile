@@ -37,10 +37,11 @@ compile_all:
 	$(CXX) attacks/VampireAttack.cpp $(CXXFLAGS)
 	$(CXX) attacks/WerewolfAttack.cpp $(CXXFLAGS)
 	$(CXX) attacks/MagicAttack.cpp $(CXXFLAGS)
+	$(CXX) spells/SpellBook.cpp $(CXXFLAGS)
 	$(CXX) spells/BaseSpell.cpp $(CXXFLAGS)
 	$(CXX) spells/RestoreHP.cpp $(CXXFLAGS)
 	$(CXX) spells/MagicArrow.cpp $(CXXFLAGS)
 	$(CXX) spells/FireBall.cpp $(CXXFLAGS)
-	$(CXX) spells/SpellBook.cpp $(CXXFLAGS)
+	$(CXX) spells/SummonSpell.cpp $(CXXFLAGS)
 all:compile_all
 	$(CXX) run.cpp *.o

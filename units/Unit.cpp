@@ -1,6 +1,5 @@
-// #include <iostream>
 #include "Unit.h"
-#include "../states/VampireState.h"
+// #include "../states/VampireState.h"
 
 void Unit::attachObserver(IObserver* necromancer) {
     this->lstObserv->insert(necromancer);
@@ -110,25 +109,39 @@ void Unit::counterAttack(Unit* enemy) {
     this->uAttack->counterAttack(this, enemy);
 }
 
+void Unit::castImplement(int spellID) {
+    int mana = this->getMagicPower();
+    int spCost = this->getState()->getSpellCost(spellID);
+    
+    if ( spCost > mana ) {
+        throw OutOfMana();
+    }
+    
+    this->uState->useMagicPower(spCost);
+}
+
 void Unit::cast(int spellID, Unit* target) {
-    if ( target->getName() != "BERSERKER" ) {
-        const std::string castSpellType = this->getState()->getSpellType(spellID);
-        
-        if ( castSpellType == "BATTLE" ) {
-            this->uAttack->magicAttack(this, spellID, target);
-            std::cout << "Your cast has BATTLE type +****+" << std::endl;
-        }
-        if ( castSpellType == "HEAL" ) {
-            this->uState->takeHitPoints(this, spellID, target);
-            std::cout << "You use HEAL spell - well done!" << std::endl;
-        }
-    } else {
-            std::cout << "Ha-ha-ha... You are foolish... I AM BERSERKER :)" << std::endl;
+    if ( target->getName() == "BERSERKER" ) {
+        throw EnemyMagicResistant();
+    }
+    
+    const std::string& castSpellType = this->getState()->getSpellType(spellID);
+    
+    this->castImplement(spellID);
+    
+    if ( castSpellType == "BATTLE" ) {
+        this->uAttack->magicAttack(this, spellID, target);
+        std::cout << "Your cast has BATTLE type +****+" << std::endl;
+    }
+    if ( castSpellType == "HEAL" ) {
+        this->uState->takeHitPoints(this, spellID, target);
+        std::cout << "You use HEAL spell - well done!" << std::endl;
     }
 }
 
-void Unit::cast() { // add spellID parametr
+void Unit::cast() {
     if ( this->getName() == "WARLOCK" ) {
+        this->castImplement(SPELL::SUMMONSPELL);
         this->uState->summon();
     }
 }

@@ -9,6 +9,8 @@ TEST_CASE("test Priest", "[Priest]") {
     REQUIRE( p1->getMaxHitPoints() == 90 );
     REQUIRE( p1->getDamage() == 25 );
     REQUIRE( p1->getMagicPower() == 80 );
+    REQUIRE( p1->getState()->getSpellCost(3) == 40 );
+    REQUIRE( p1->getState()->getSpellPower(3) == 35 );
     REQUIRE( p1->getState()->getHealIndex() == 100 );
     REQUIRE( p1->getState()->getBattleIndex() == 50 );
 }

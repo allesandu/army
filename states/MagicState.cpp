@@ -38,6 +38,14 @@ int MagicState::getBattleIndex() const {
     return this->battleIndex;
 }
 
+void MagicState::useMagicPower(int spCost) {
+    if (  spCost > this->magicPower ) {
+        throw OutOfMana();
+    }
+    this->magicPower -= spCost;
+    std::cout << "Mana reduced --- MagicState" << std::endl;
+}
+
 void MagicState::takeHitPoints(Unit* caster, int spellID, Unit* target) {
     std::cout << "WE ARE HERE --- MagicState" << std::endl;
     

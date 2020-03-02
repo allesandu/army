@@ -33,6 +33,10 @@ int State::getMagicPower() const {
     // std::cout << "0000 - no magicPower (class <State>)" << std::endl;
 }
 
+void State::useMagicPower(int spCost) {
+    
+}
+
 int State::getHealIndex() const {
     std::cout << "0000 - no healIndex (class <State>)" << std::endl;
 }
@@ -41,8 +45,14 @@ int State::getBattleIndex() const {
     std::cout << "0000 - no battleIndex (class <State>)" << std::endl;
 }
 
+int State::getSpellCost(int spellID) const {
+    std::cout << "0000 - no Spell ability (class <State>)" << std::endl;
+    return 0;
+}
+
 int State::getSpellPower(int spellID) const {
     std::cout << "0000 - no magicAttack ability (class <State>)" << std::endl;
+    return 0;
 }
 
 const std::string State::getSpellType(int spellID) const {

@@ -9,6 +9,8 @@ TEST_CASE( "test Werewolf", "[Werewolf]" ) {
     REQUIRE( ww1->getMaxHitPoints() == 180);
     REQUIRE( ww1->getDamage() == 90 );
     REQUIRE( ww1->getMagicPower() == 0 );
+    REQUIRE( ww1->getState()->getSpellCost(4) == 0 );
+    REQUIRE( ww1->getState()->getSpellPower(4) == 0 );
     
     SECTION( "Werewolf: tranformation test Werewolf-Wolf" ) {
         // Werewolf* ww2 = new Werewolf();        
@@ -20,6 +22,8 @@ TEST_CASE( "test Werewolf", "[Werewolf]" ) {
         REQUIRE( ww1->getMaxHitPoints() == 230);
         REQUIRE( ww1->getDamage() == 120 );
         REQUIRE( ww1->getMagicPower() == 0 );
+        REQUIRE( ww1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( ww1->getState()->getSpellPower(4) == 0 );
         
         ww1->abilityInner();
         REQUIRE( ww1->getName() == "WEREWOLF" );
@@ -27,5 +31,7 @@ TEST_CASE( "test Werewolf", "[Werewolf]" ) {
         REQUIRE( ww1->getMaxHitPoints() == 180);
         REQUIRE( ww1->getDamage() == 90 );
         REQUIRE( ww1->getMagicPower() == 0 );
+        REQUIRE( ww1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( ww1->getState()->getSpellPower(4) == 0 );
     }
 }

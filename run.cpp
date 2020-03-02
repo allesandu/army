@@ -54,12 +54,12 @@ int main() {
     // std::cout << "__________________________________________________________" << std::endl;
     
     Warlock* wl1 = new Warlock();
-    std::cout << *wl1;
+    std::cout << *wl1 << std::endl;
     
-    wl1->cast(); // add spellID parametr
-    wl1->cast(); // add spellID parametr
+    wl1->cast();
+    // wl1->cast();
     
-    delete wl1;
+    // delete wl1;
     std::cout << "__________________________________________________________" << std::endl;
     
     // std::cout << "__________________________________________________________" << std::endl;
@@ -72,6 +72,7 @@ int main() {
     
     // wlState->getDemonArmy();
     // delete wlState;
+    // std::cout << *wl1 << std::endl;
     // std::cout << "__________________________________________________________" << std::endl;
     
     // d1->getState()->getDemonArmy();
@@ -79,10 +80,10 @@ int main() {
     
     // std::cout << "__________________________________________________________" << std::endl;
     
-    // Soldier* s1 = new Soldier();
-    // std::cout << *s1 << std::endl;
+    Soldier* s1 = new Soldier();
+    std::cout << *s1 << std::endl;
     // // s1->abilityInner();
-    // std::cout << "==========================================================" << std::endl;
+    std::cout << "==========================================================" << std::endl;
     
     // Rogue* r1 = new Rogue();
     // std::cout << *r1 << std::endl;
@@ -135,10 +136,24 @@ int main() {
     // std::cout << *w1 << *h1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
     // h1->attack(w1);
-    // h1->cast(SPELL::FIREBALL, b1);
     
-    // std::cout << *w1 << *h1 << std::endl;
-    // std::cout << "==========================================================" << std::endl;
+    // wl1->cast(SPELL::FIREBALL, s1);
+    std::cout << *wl1 << *s1 << std::endl;
+    std::cout << "==========================================================" << std::endl;
+    
+    wl1->cast(SPELL::MAGICARROW, s1);
+    std::cout << *wl1 << *s1 << std::endl;
+    std::cout << "==========================================================" << std::endl;
+    
+    // wl1->cast(SPELL::MAGICARROW, s1);
+    std::cout << "=== t e s t ======" << std::endl;
+    s1->cast();
+    std::cout << "------------------" << std::endl;
+    wl1->cast();
+    std::cout << "==================" << std::endl;
+    
+    std::cout << *wl1 << *s1 << std::endl;
+    std::cout << "==========================================================" << std::endl;
     // h1->attack(w1);
     
     // std::cout << *w1 << *h1 << std::endl;

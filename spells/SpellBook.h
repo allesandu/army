@@ -6,6 +6,7 @@
 #include "RestoreHP.h"
 #include "MagicArrow.h"
 #include "FireBall.h"
+#include "SummonSpell.h"
 #include <iostream>
 
 class SpellBook {

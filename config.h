@@ -42,13 +42,15 @@ enum class MAGIC {
 enum class COST {
     RESTOREHP = 30,
     MAGICARROW = 35,
-    FIREBALL = 40
+    FIREBALL = 40,
+    SUMMONSPELL = 20
 };
 
 enum class POWER {
     RESTOREHP = 20,
     MAGICARROW = 25,
-    FIREBALL = 35
+    FIREBALL = 35,
+    SUMMONSPELL = 20
 };
 
 // enum class SPELL {
@@ -56,7 +58,8 @@ enum SPELL {
     BASESPELL = 0,
     RESTOREHP,
     MAGICARROW,
-    FIREBALL
+    FIREBALL,
+    SUMMONSPELL
 };
 
 #endif // CONFIG_H

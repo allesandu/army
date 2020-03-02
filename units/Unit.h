@@ -45,8 +45,9 @@ class Unit : public IObserver, public IObservable {
         virtual void attack(Unit* enemy);
         virtual void counterAttack(Unit* enemy);
         
+        void castImplement(int spellID);
         void cast(int spellID, Unit* target);
-        void cast();// add spellID parametr !! especially for Warlock
+        void cast();// especially for Warlock
         void abilityInner();
         void abilityOuter(Unit* target);
 };

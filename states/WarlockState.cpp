@@ -32,7 +32,7 @@ void WarlockState::addDemon() {
 
 void WarlockState::summon() {
     this->addDemon();
-    std::cout << "Demon has been summon correctly" << std::endl;
+    std::cout << "Demon has been summoned correctly" << std::endl;
 }
 
 void WarlockState::getDemonArmy() {
