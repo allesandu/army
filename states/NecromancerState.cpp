@@ -6,6 +6,7 @@ NecromancerState::NecromancerState() : MagicState() {
     this->maxHitPoints = (int)HP::NECROMANCER;
     this->damage = (int)DMG::NECROMANCER;
     this->magicPower = (int)MAGIC::NECROMANCER;
+    this->undead = true;
     // std::cout << "NecromancerState constructor!" << std::endl;
 }
 

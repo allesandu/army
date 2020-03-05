@@ -8,6 +8,7 @@ TEST_CASE( "test Werewolf", "[Werewolf]" ) {
     REQUIRE( ww1->getHitPoints() == 180 );
     REQUIRE( ww1->getMaxHitPoints() == 180);
     REQUIRE( ww1->getDamage() == 90 );
+    REQUIRE( ww1->isUndead() == false );
     REQUIRE( ww1->getMagicPower() == 0 );
     REQUIRE( ww1->getState()->getSpellCost(4) == 0 );
     REQUIRE( ww1->getState()->getSpellPower(4) == 0 );

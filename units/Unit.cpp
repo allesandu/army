@@ -58,6 +58,10 @@ int Unit::getDamage() const {
     return this->uState->getDamage();
 }
 
+bool Unit::isUndead() {
+    this->uState->isUndead();
+}
+
 int Unit::getMagicPower() const {
     return this->uState->getMagicPower();
 }

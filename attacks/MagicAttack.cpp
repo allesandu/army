@@ -12,7 +12,13 @@ void MagicAttack::magicAttack(Unit* caster, int spellID, Unit* target) {
     std::cout << "(@-@-@-@-@)* - MagicAttack - (@-@-@-@-@)" << std::endl;
     // std::cout << "\tbattleInd = " << caster->getState()->getBattleIndex() << std::endl;// delete at all
     int dmg = caster->getState()->getSpellPower(spellID);
-    int bInd = caster->getState()->getBattleIndex();
+    int bInd;
+    
+    if ( target->isUndead() ) {
+        bInd = 200;
+    } else {
+        bInd = caster->getState()->getBattleIndex();
+    }
     
     target->takeDamage(dmg*bInd/100);
 }

@@ -32,6 +32,7 @@ class Unit : public IObserver, public IObservable {
         int getHitPoints() const;
         virtual int getMaxHitPoints() const;
         int getDamage() const;
+        bool isUndead();
         virtual int getMagicPower() const;
         
         State* getState();

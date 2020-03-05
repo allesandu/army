@@ -1,11 +1,12 @@
 #include <iostream>
 #include "State.h"
 
-State::State(const std::string& name, int maxHP, int dmg) {
+State::State(const std::string& name, int maxHP, int dmg, bool undeadStatus) {
     this->name = name;
     this->hitPoints = maxHP;
     this->maxHitPoints = maxHP;
     this->damage = dmg;
+    this->undead = undeadStatus;
 }
 
 State::~State() {
@@ -27,6 +28,10 @@ int State::getMaxHitPoints() const {
 int State::getDamage() const {
     return this->damage;
 }
+
+bool State::isUndead() {
+        return this->undead;
+    }
 
 int State::getMagicPower() const {
     return 0;
