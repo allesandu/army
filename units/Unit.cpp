@@ -30,11 +30,26 @@ bool Unit::isAlive() {
     return this->getHitPoints() > 0;
 }
 
-Unit::Unit(const std::string& name, int maxHp, int dmg) {
-    this->uState = new State(name, maxHp, dmg);
-    this->lstObserv = new std::set<IObserver*>();
-    std::cout << "---------------------- UNIT constructor! ----------" << std::endl;
+// Unit::Unit(const std::string& name, int maxHp, int dmg) { // DETELE
+//     this->uState = new State(name, maxHp, dmg);// DETELE
+//     this->lstObserv = new std::set<IObserver*>();// DETELE
+//     std::cout << "---------------------- UNIT constructor! ----------" << std::endl;// DETELE
+// }
+
+Unit::Unit(const std::string& name, int maxHp, int dmg)
+    : uState( new State(name, maxHp, dmg)) {
+        this->uAttack = new BaseAttack();
+        this->lstObserv = new std::set<IObserver*>();
+        std::cout << "---------------------- UNIT constructor! Caiman-temp-" << std::endl;// DETELE
 }
+
+// Unit::Unit(State* state, BaseAttack* attack) {
+//     this->uState = state;
+//     this->uAttack = attack;
+    
+//     this->lstObserv = new std::set<IObserver*>();
+//     std::cout << "---------------------- UNIT constructor!  - 032020 ----------" << std::endl;
+// }
 
 Unit::~Unit() {
     std::cout << "---------------------- UNIT destructor! -----------" << std::endl;
@@ -42,7 +57,7 @@ Unit::~Unit() {
     delete this->uAttack;
 }
 
-const std::string Unit::getName() const {
+const std::string& Unit::getName() const {
     return this->uState->getName();
 }
 
@@ -74,7 +89,7 @@ void Unit::takeDamage(int uDmg) {
     int finalDmg = this->getHitPoints();
     int finalHP = finalDmg - uDmg;
     
-    if ( finalHP < 0 ) {
+    if ( finalHP <= 0 ) {
         this->Notify();
     } else {
         finalDmg = uDmg;

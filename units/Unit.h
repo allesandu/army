@@ -25,10 +25,12 @@ class Unit : public IObserver, public IObservable {
         virtual void Update(IObservable* victim);
         
         bool isAlive();
-        Unit(const std::string& name = "noOne", int HP = 0, int dmg = 0);
+        
+        Unit(const std::string& name = "noOne", int HP = 0, int dmg = 0);// DETELE
+        // Unit(State* state, BaseAttack* attack);
         virtual ~Unit();
         
-        const std::string getName() const;
+        const std::string& getName() const;
         int getHitPoints() const;
         virtual int getMaxHitPoints() const;
         int getDamage() const;

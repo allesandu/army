@@ -1,5 +1,5 @@
 #include "VampireAttack.h"
-#include "../states/VampireState.h"
+
 
 VampireAttack::VampireAttack() : BaseAttack() {
     // std::cout << "VampireAttack constructor!" << std::endl;
@@ -35,6 +35,7 @@ void VampireAttack::bite(Unit* target){
     if ( target->getName() != "WEREWOLF" ) {
         if ( target->getName() != "WOLF" ) {
             target->setState(new VampireState());
+            // target->setState(new VampireState("VAMPIRE", (int)HP::VAMPIRE, (int)DMG::VAMPIRE));
             target->setAttack(new VampireAttack());
             std::cout << "0000 - Vampire has made a bite!" << std::endl;
         }

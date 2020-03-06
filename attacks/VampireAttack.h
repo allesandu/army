@@ -1,6 +1,8 @@
 #ifndef VAMPIREATTACK_H
 #define VAMPIREATTACK_H
 #include "BaseAttack.h"
+#include "../states/VampireState.h"
+#include "../config.h"
 
 class VampireAttack : public BaseAttack {
     public:

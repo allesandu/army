@@ -17,7 +17,7 @@ class State {
         State(const std::string& name = "noOne", int maxHP = 0, int dmg = 0, bool undeadStatus = false);
         virtual ~State();
         
-        const std::string getName() const;
+        const std::string& getName() const;
         int getHitPoints() const;
         int getMaxHitPoints() const;
         int getDamage() const;

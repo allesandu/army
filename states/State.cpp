@@ -1,19 +1,25 @@
 #include <iostream>
 #include "State.h"
 
-State::State(const std::string& name, int maxHP, int dmg, bool undeadStatus) {
-    this->name = name;
-    this->hitPoints = maxHP;
-    this->maxHitPoints = maxHP;
-    this->damage = dmg;
-    this->undead = undeadStatus;
+// State::State(const std::string& name, int maxHP, int dmg, bool undeadStatus) {
+//     this->name = name;
+//     this->hitPoints = maxHP;
+//     this->maxHitPoints = maxHP;
+//     this->damage = dmg;
+//     this->undead = undeadStatus;
+//     std::cout << "State condtructor!" << std::endl;
+// }
+
+State::State(const std::string& name, int maxHP, int dmg, bool undeadStatus)
+        : name(name), hitPoints(maxHP), maxHitPoints(maxHP), damage(dmg), undead(undeadStatus) {
+    std::cout << "State condtructor!  - Caiman templ" << std::endl;
 }
 
 State::~State() {
     // std::cout << "Destructor done!" << std::endl;// WHY few times!!
 }
 
-const std::string State::getName() const {
+const std::string& State::getName() const {
     return this->name;
 }
 

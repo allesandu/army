@@ -53,14 +53,14 @@ int main() {
     // delete d1;
     // std::cout << "__________________________________________________________" << std::endl;
     
-    Warlock* wl1 = new Warlock();
-    std::cout << *wl1 << std::endl;
+    // Warlock* wl1 = new Warlock();
+    // std::cout << *wl1 << std::endl;
     
-    wl1->cast();
+    // wl1->cast();
     // wl1->cast();
     
     // delete wl1;
-    std::cout << "__________________________________________________________" << std::endl;
+    // std::cout << "__________________________________________________________" << std::endl;
     
     // std::cout << "__________________________________________________________" << std::endl;
     // WarlockState* wlState = new WarlockState();
@@ -83,20 +83,20 @@ int main() {
     Soldier* s1 = new Soldier();
     std::cout << *s1 << std::endl;
     // // s1->abilityInner();
-    std::cout << "==========================================================" << std::endl;
+    std::cout << "==========================================================\n" << std::endl;
     
     // Rogue* r1 = new Rogue();
     // std::cout << *r1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
     
-    // Berserker* b1 = new Berserker();
-    // std::cout << *b1 << std::endl;
+    Berserker* b1 = new Berserker();
+    std::cout << *b1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
     
-    // Vampire* v1 = new Vampire();
-    // std::cout << *v1 << std::endl;
+    Vampire* v1 = new Vampire();
+    std::cout << *v1 << std::endl;
     // v1->abilityInner();
-    // std::cout << "==========================================================" << std::endl;
+    std::cout << "==========================================================" << std::endl;
     
     // Werewolf* ww1 = new Werewolf();
     // std::cout << *ww1 << std::endl;
@@ -138,22 +138,22 @@ int main() {
     // h1->attack(w1);
     
     // wl1->cast(SPELL::FIREBALL, s1);
-    std::cout << *wl1 << *s1 << std::endl;
-    std::cout << "==========================================================" << std::endl;
-    
-    wl1->cast(SPELL::MAGICARROW, s1);
-    std::cout << *wl1 << *s1 << std::endl;
-    std::cout << "==========================================================" << std::endl;
+    // std::cout << *wl1 << *s1 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
     
     // wl1->cast(SPELL::MAGICARROW, s1);
-    std::cout << "=== t e s t ======" << std::endl;
-    s1->cast();
-    std::cout << "------------------" << std::endl;
-    wl1->cast();
-    std::cout << "==================" << std::endl;
+    // std::cout << *wl1 << *s1 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
     
-    std::cout << *wl1 << *s1 << std::endl;
-    std::cout << "==========================================================" << std::endl;
+    // wl1->cast(SPELL::MAGICARROW, s1);
+    // std::cout << "=== t e s t ======" << std::endl;
+    // s1->cast();
+    // std::cout << "------------------" << std::endl;
+    // wl1->cast();
+    // std::cout << "==================" << std::endl;
+    
+    // std::cout << *wl1 << *s1 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
     // h1->attack(w1);
     
     // std::cout << *w1 << *h1 << std::endl;
@@ -188,7 +188,7 @@ int main() {
     // b1->magicAttack(s1);
     // v1->attack(s1);
     
-    // v1->abilityOuter(s1);
+    v1->abilityOuter(s1);
     // v1->abilityOuter(r1);
     // v1->abilityInner();
     // ww1->abilityOuter(s1);
@@ -196,19 +196,20 @@ int main() {
     // ww1->abilityOuter(v1);
     // ww1->abilityInner();
     // ww1->abilityOuter(r1);
-    // v1->abilityOuter(ww1);
-    // std::cout << *s1 << *r1 << *nm1 << std::endl;
-    // std::cout << "==========================================================" << std::endl;
+    
+    std::cout << *s1 << *v1 << std::endl;
+    std::cout << "==========================================================" << std::endl;
+    s1->abilityOuter(b1);
     // std::cout << "----------------- Attack has been organized! ---\n";
-    // std::cout << *s1 << *r1 << *v1 << *ww1 << std::endl;
+    std::cout << *s1 << *v1 << *b1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
     // std::cout << *s1 << *w1 << *v1 << *ww1 << std::endl;
 
     // std:: cout << "and magic=" << w1->getMagicDamage() << std::endl;
-    // delete s1;
+    delete s1;
     // delete r1;
-    // delete b1;
-    // delete v1;
+    delete b1;
+    delete v1;
     // delete ww1;
     
     // delete w1;

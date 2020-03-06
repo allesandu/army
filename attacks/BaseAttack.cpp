@@ -2,7 +2,7 @@
 #include <iostream>
 
 BaseAttack::BaseAttack() {
-    // std::cout << "BaseAttack constructor!" << std::endl;
+    std::cout << "BaseAttack constructor! - 032020" << std::endl;
 }
 
 BaseAttack::~BaseAttack() {
