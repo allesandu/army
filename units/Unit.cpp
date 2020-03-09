@@ -1,5 +1,4 @@
 #include "Unit.h"
-// #include "../states/VampireState.h"
 
 void Unit::attachObserver(IObserver* necromancer) {
     this->lstObserv->insert(necromancer);
@@ -36,20 +35,20 @@ bool Unit::isAlive() {
 //     std::cout << "---------------------- UNIT constructor! ----------" << std::endl;// DETELE
 // }
 
-Unit::Unit(const std::string& name, int maxHp, int dmg)
-    : uState( new State(name, maxHp, dmg)) {
-        this->uAttack = new BaseAttack();
+Unit::Unit(const std::string& name, int maxHp, int dmg, bool undeadStatus)
+    : uState(new State(name, maxHp, dmg, undeadStatus)),
+    uAttack(new BaseAttack()) {
         this->lstObserv = new std::set<IObserver*>();
-        std::cout << "---------------------- UNIT constructor! Caiman-temp-" << std::endl;// DETELE
+        std::cout << "-------------- UNIT constructor! Caiman-temp-" << std::endl;// DETELE
 }
 
-// Unit::Unit(State* state, BaseAttack* attack) {
-//     this->uState = state;
-//     this->uAttack = attack;
+Unit::Unit(State* state, BaseAttack* attack)
+    : uState(state),// dont know hot to create proper State_constructor !!! - maybe bad idea
+    uAttack(attack) {
     
-//     this->lstObserv = new std::set<IObserver*>();
-//     std::cout << "---------------------- UNIT constructor!  - 032020 ----------" << std::endl;
-// }
+    this->lstObserv = new std::set<IObserver*>();
+    std::cout << "------------- UNIT constructor!  - with ANOTHER State|BaseAttack---" << std::endl;
+}
 
 Unit::~Unit() {
     std::cout << "---------------------- UNIT destructor! -----------" << std::endl;
@@ -81,8 +80,12 @@ int Unit::getMagicPower() const {
     return this->uState->getMagicPower();
 }
 
-State* Unit::getState(){
+State* Unit::getState() const {
     return this->uState;
+}
+
+BaseAttack* Unit::getAttack() const {
+    return this->uAttack;
 }
 
 void Unit::takeDamage(int uDmg) {
@@ -108,11 +111,13 @@ void Unit::setState(State* newState) {
     delete this->uState;
     std::cout << "0000 - STATE has changed (class <Unit>)" << std::endl;
     this->uState = newState;
+    // this->uState->setState(newState); // maybe dont need
 }
 void Unit::setAttack(BaseAttack* newAttack) {
     delete this->uAttack;
     std::cout << "0000 - ATTACK has changed (class <Unit>)" << std::endl;
     this->uAttack = newAttack;
+    // this->uState->setAttack(newAttack);
 }
 
 void Unit::attack(Unit* enemy) {
@@ -165,12 +170,12 @@ void Unit::cast() {
     }
 }
 
-void Unit::abilityInner() {
+void Unit::transform() {
     std::cout << "0000 - attempt to change STATE (class <Unit>)" << std::endl;
     this->uState->transform();
 }
 
-void Unit::abilityOuter(Unit* target) {
+void Unit::bite(Unit* target) {
     std::cout << "0000 - attempt to change UNIT (class <Unit>)" << std::endl;
     this->uAttack->bite(target);
 }

@@ -1,11 +1,14 @@
 #ifndef DEMONSTATE_H
 #define DEMONSTATE_H
-#include "State.h"
+#include "SoldierState.h"
 #include "../config.h"
 
-class DemonState : public State {
+class DemonState : public SoldierState {
     public:
-        DemonState();
+        DemonState(const std::string& name = "DEMON",
+                    int maxHP = (int)HP::DEMON,
+                    int dmg = (int)DMG::DEMON,
+                    bool undeadStatus = false);
         
        virtual ~DemonState();
 };

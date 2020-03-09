@@ -1,7 +1,7 @@
 #include "RogueAttack.h"
 
 RogueAttack::RogueAttack() : BaseAttack() {
-    // std::cout << "RogueAttack constructor!" << std::endl;
+    std::cout << "RogueAttack constructor!" << std::endl;
 }
 
 RogueAttack::~RogueAttack() {

@@ -7,7 +7,12 @@
 
 class Vampire : public Unit {
     public:
-        Vampire(const std::string& name = "VAMPIRE", int maxHP = (int)HP::VAMPIRE, int dmg = (int)DMG::VAMPIRE);
+        // Vampire(const std::string& name = "VAMPIRE",
+        //         int maxHP = (int)HP::VAMPIRE,
+        //         int dmg = (int)DMG::VAMPIRE,
+        //         bool undeadStatus = true);
+        Vampire();
+        
         virtual ~Vampire();
         
 };

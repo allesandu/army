@@ -1,5 +1,4 @@
 #include "BaseAttack.h"
-#include <iostream>
 
 BaseAttack::BaseAttack() {
     std::cout << "BaseAttack constructor! - 032020" << std::endl;

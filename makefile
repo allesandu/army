@@ -44,4 +44,4 @@ compile_all:
 	$(CXX) spells/FireBall.cpp $(CXXFLAGS)
 	$(CXX) spells/SummonSpell.cpp $(CXXFLAGS)
 all:compile_all
-	$(CXX) run.cpp *.o
+	$(CXX) run.cpp *.o && clear && ./a.out

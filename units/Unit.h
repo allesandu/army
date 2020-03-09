@@ -26,8 +26,9 @@ class Unit : public IObserver, public IObservable {
         
         bool isAlive();
         
-        Unit(const std::string& name = "noOne", int HP = 0, int dmg = 0);// DETELE
-        // Unit(State* state, BaseAttack* attack);
+        Unit(const std::string& name = "noOne", int maxHP = 0, int dmg = 0, bool undeadStatus = false);
+        Unit(State* state, BaseAttack* attack); // maybe bad idea
+        
         virtual ~Unit();
         
         const std::string& getName() const;
@@ -37,7 +38,8 @@ class Unit : public IObserver, public IObservable {
         bool isUndead();
         virtual int getMagicPower() const;
         
-        State* getState();
+        State* getState() const;
+        BaseAttack* getAttack() const;
         
         void takeDamage(int uStateDmg);
         void takeHitPoints(int enemyHP);
@@ -50,9 +52,9 @@ class Unit : public IObserver, public IObservable {
         
         void castImplement(int spellID);
         void cast(int spellID, Unit* target);
-        void cast();// especially for Warlock
-        void abilityInner();
-        void abilityOuter(Unit* target);
+        void cast();// special for Warlock
+        void transform();
+        void bite(Unit* target);
 };
 
 std::ostream& operator<<(std::ostream& out, const Unit& unit);

@@ -18,11 +18,14 @@
 #include "states/WolfState.h"
 #include "states/MagicState.h"
 #include "states/WarlockState.h" // delete afte testing
+#include "attacks/BaseAttack.h"
+#include "attacks/VampireAttack.h"
 #include "spells/BaseSpell.h"
 #include "spells/RestoreHP.h"
 #include "spells/SpellBook.h"
 #include "spells/MagicArrow.h"
 #include "spells/FireBall.h"
+#include "config.h"
 #include "Exceptions.h"
 #include <iostream>
 
@@ -47,6 +50,110 @@ int main() {
     // delete spB;
     // =======================================================================================
     // =======================================================================================
+    
+    // =======================================================================================
+    // ============================= STATE CHECKING ==========================================
+    // std::cout << "_____________________STATE " << std::endl;
+    // State* st = new State();
+    // std::cout << "obj_value = " << st;
+    // std::cout << "  adress = " << &st << std::endl;
+    // std::cout << *st << std::endl;
+    // std::cout << "__________________________________________________________" << std::endl;
+    
+    // std::cout << "_____________________Sold1 STATE " << std::endl;
+    // SoldierState* sold1 = new SoldierState();
+    // std::cout << "obj_value = " << sold1;
+    // std::cout << "  adress = " << &sold1 << std::endl;
+    // std::cout << *sold1 << std::endl;
+    // std::cout << "__________________________________________________________" << std::endl;
+    
+    // std::cout << "_____________________Sold2 STATE " << std::endl;
+    // SoldierState* sold2 = new SoldierState("SOLDIER",(int)HP::SOLDIER, (int)DMG::SOLDIER, false);
+    // std::cout << "obj_value = " << sold2;
+    // std::cout << "  adress = " << &sold2 << std::endl;
+    // std::cout << *sold2 << std::endl;
+    // std::cout << "__________________________________________________________" << std::endl;
+    
+    // std::cout << "_____________________Vamp STATE " << std::endl;
+    // VampireState* vamp_st1 = new VampireState();
+    // std::cout << "obj_value = " << vamp_st1;
+    // std::cout << "  adress = " << &vamp_st1 << std::endl;
+    // std::cout << *vamp_st1 << std::endl;
+    // std::cout << "__________________________________________________________" << std::endl;
+    
+    // st = vamp_st1;
+    
+    // std::cout << "_____________________new STATE " << std::endl;
+   
+    // std::cout << "obj_value = " << st;
+    // std::cout << "  adress = " << &st << std::endl;
+    // std::cout << *st << std::endl;
+    // std::cout << "__________________________________________________________" << std::endl;
+    
+    
+    // =======================================================================================
+    // =======================================================================================
+    
+    // =======================================================================================
+    // ============================= ATTACK CHECKING ==========================================
+    // std::cout << "_____________________BASEATTACK " << std::endl;
+    // BaseAttack* ba1 = new BaseAttack();
+    // std::cout << "obj_value = " << ba1;
+    // std::cout << "  adress = " << &ba1 << std::endl;
+    // // std::cout << *ba1 << std::endl;
+    // std::cout << "__________________________________________________________" << std::endl;
+    
+    // std::cout << "_____________________Vamp ATTACK " << std::endl;
+    // VampireAttack* vatt = new VampireAttack();
+    // std::cout << "obj_value = " << vatt;
+    // std::cout << "  adress = " << &vatt << std::endl;
+    // // std::cout << *vatt << std::endl;
+    // std::cout << "__________________________________________________________" << std::endl;
+    
+    // ba1 = vatt;
+    
+    // std::cout << "_____________________new ATTACK (Base = Vampire) " << std::endl;
+   
+    // std::cout << "obj_value = " << ba1;
+    // std::cout << "  adress = " << &ba1 << std::endl;
+    // // std::cout << *ba1 << std::endl;
+    // std::cout << "__________________________________________________________" << std::endl;
+    
+    // =======================================================================================
+    // =======================================================================================
+    
+    
+    // =======================================================================================
+    // ============================= SOLDIER  CHECKING =======================================
+    // std::cout << "_____________________SOLDIER " << std::endl;
+    // Soldier* s1 = new Soldier();
+    // std::cout << "obj_value = " << s1;
+    // std::cout << "  adress = " << &s1 << std::endl;
+    // std::cout << *s1 << std::endl;
+    // std::cout << "_____________________info " << std::endl;
+    // std::cout << "            s1->getName() = " << s1->getName() << std::endl;
+    // // std::cout << "s1->getState() " << &(s1->getState()) << std::endl;
+    
+    // State* soldState = s1->getState();
+    // BaseAttack* soldAt = s1->getAttack();
+    // std::cout<< "SoldierState: obj_value = " << soldState << "  adress = " << &soldState << std::endl;
+    // std::cout<< "SoldierAttac: obj_value = " << soldAt << "  adress = " << &soldAt << std::endl;
+    // s1->setState(vamp_st1);
+    // // s1->setState(new VampireState());
+    // // s1->setAttack(new VampireAttack());
+    // s1->setAttack(vatt);
+    // State* soldStateNew = s1->getState();
+    // BaseAttack* soldAtNew = s1->getAttack();
+    // std::cout << "_____________________new info " << std::endl;
+    // std::cout << "            s1->getName() = " << s1->getName() << std::endl;
+    // std::cout<< "SoldierState: obj_value = " << soldStateNew << "  adress = " << &soldStateNew << std::endl;
+    // std::cout<< "SoldierAttac: obj_value = " << soldAtNew << "  adress = " << &soldAtNew << std::endl;
+    
+    // std::cout << "__________________________________________________________" << std::endl;
+    // =======================================================================================
+    // =======================================================================================
+    
+    
     // std::cout << "__________________________________________________________" << std::endl;
     // Demon* d1 = new Demon();
     // std::cout << *d1 << std::endl;
@@ -80,32 +187,36 @@ int main() {
     
     // std::cout << "__________________________________________________________" << std::endl;
     
-    Soldier* s1 = new Soldier();
-    std::cout << *s1 << std::endl;
-    // // s1->abilityInner();
-    std::cout << "==========================================================\n" << std::endl;
+    // =======================================================================================
+    // ============================= BITE  CHECK =======================================
+    // Soldier* s1 = new Soldier();
+    // Soldier* s2 = new Soldier();
+    // Vampire* v1 = new Vampire();
+    
+    // std::cout << *s1 << *v1 << *s2 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
+    
+    // v1->bite(s1);
+    // std::cout << "----------------- Bite 1 has been organized! ---\n";
+    // std::cout << *s1 << *v1 << *s2 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
+    
+    // s1->bite(s2);
+    // std::cout << "----------------- Bite 2 has been organized! ---\n";
+    // std::cout << *s1 << *v1 << *s2 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
     
     // Rogue* r1 = new Rogue();
     // std::cout << *r1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
     
-    Berserker* b1 = new Berserker();
-    std::cout << *b1 << std::endl;
+    // s2->bite(r1);
+    // std::cout << "----------------- Bite 3 has been organized! ---\n";
+    // std::cout << *s1 << *v1 << *s2 << *r1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
-    
-    Vampire* v1 = new Vampire();
-    std::cout << *v1 << std::endl;
-    // v1->abilityInner();
-    std::cout << "==========================================================" << std::endl;
-    
-    // Werewolf* ww1 = new Werewolf();
-    // std::cout << *ww1 << std::endl;
-    // ww1->abilityInner();
-    // std::cout << *ww1 << std::endl;
-    // ww1->abilityInner();
-    // std::cout << *ww1 << std::endl;
-    // std::cout << "==========================================================" << std::endl;
-    
+    // =======================================================================================
+    // =======================================================================================
+
     // Wizard* w1 = new Wizard();
     // std::cout << *w1;
     // std::cout << "__________________________________________________________" << std::endl;
@@ -118,6 +229,31 @@ int main() {
     // MagicState* ms = new MagicState();
     // std::cout << "certain spell costs {[" << ms->getSpellCost(3) << "]} spellpoints" << std::endl;
     // delete ms;
+    Soldier* s1 = new Soldier();
+    std::cout << *s1 << std::endl;
+    std::cout << "==========================================================" << std::endl;
+    
+    Vampire* v1 = new Vampire();
+    std::cout << *v1 << std::endl;
+    std::cout << "==========================================================" << std::endl;
+    
+    Rogue* r1 = new Rogue();
+    std::cout << *r1 << std::endl;
+    std::cout << "==========================================================" << std::endl;
+    
+    Berserker* b1 = new Berserker();
+    std::cout << *b1 << std::endl;
+    std::cout << "==========================================================" << std::endl;
+        
+    Werewolf* ww1 = new Werewolf();
+    std::cout << *ww1 << std::endl;
+    // ww1->transform();
+    // std::cout << "__________________________________" << std::endl;
+    // std::cout << *ww1 << std::endl;
+    // ww1->transform();
+    // std::cout << "__________________________________" << std::endl;
+    // std::cout << *ww1 << std::endl;
+    std::cout << "==========================================================" << std::endl;
     
     // Healer* h1 = new Healer();
     // std::cout << *h1;
@@ -188,28 +324,28 @@ int main() {
     // b1->magicAttack(s1);
     // v1->attack(s1);
     
-    v1->abilityOuter(s1);
-    // v1->abilityOuter(r1);
-    // v1->abilityInner();
-    // ww1->abilityOuter(s1);
-    // ww1->abilityOuter(r1);
-    // ww1->abilityOuter(v1);
-    // ww1->abilityInner();
-    // ww1->abilityOuter(r1);
+    // v1->bite(s1);
+    // v1->bite(r1);
+    // v1->transform();
+    // ww1->bite(s1);
+    // ww1->bite(r1);
+    // ww1->bite(v1);
+    // ww1->transform();
+    // ww1->bite(r1);
     
-    std::cout << *s1 << *v1 << std::endl;
-    std::cout << "==========================================================" << std::endl;
-    s1->abilityOuter(b1);
+    // std::cout << *s1 << *v1 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
+    // s1->bite(b1);
     // std::cout << "----------------- Attack has been organized! ---\n";
-    std::cout << *s1 << *v1 << *b1 << std::endl;
+    // std::cout << *s1 << *v1 << *b1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
     // std::cout << *s1 << *w1 << *v1 << *ww1 << std::endl;
 
     // std:: cout << "and magic=" << w1->getMagicDamage() << std::endl;
-    delete s1;
+    // delete s1;
     // delete r1;
-    delete b1;
-    delete v1;
+    // delete b1;
+    // delete v1;
     // delete ww1;
     
     // delete w1;

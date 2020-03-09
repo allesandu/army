@@ -2,7 +2,7 @@
 
 
 VampireAttack::VampireAttack() : BaseAttack() {
-    // std::cout << "VampireAttack constructor!" << std::endl;
+    std::cout << "VampireAttack constructor!" << std::endl;
 }
 
 VampireAttack::~VampireAttack() {

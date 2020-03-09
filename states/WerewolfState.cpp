@@ -1,12 +1,17 @@
 #include "WerewolfState.h"
 #include "WolfState.h"
 
-WerewolfState::WerewolfState() : State() {
-    this->name = "WEREWOLF";
-    this->hitPoints = (int) HP::WEREWOLF;
-    this->maxHitPoints = (int) HP::WEREWOLF;
-    this->damage = (int) DMG::WEREWOLF;
-    // std::cout << "WerewolfState constructor!" << std::endl;
+// WerewolfState::WerewolfState() : State() {
+//     this->name = "WEREWOLF";
+//     this->hitPoints = (int) HP::WEREWOLF;
+//     this->maxHitPoints = (int) HP::WEREWOLF;
+//     this->damage = (int) DMG::WEREWOLF;
+//     // std::cout << "WerewolfState constructor!" << std::endl;
+// }
+
+WerewolfState::WerewolfState(const std::string& name, int maxHP, int dmg, bool undeadStatus)
+            : State(name, maxHP, dmg, undeadStatus) {
+    std::cout << "WerewolfState condtructor!  - 032020" << std::endl;
 }
 
 WerewolfState::~WerewolfState() {

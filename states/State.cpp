@@ -15,6 +15,15 @@ State::State(const std::string& name, int maxHP, int dmg, bool undeadStatus)
     std::cout << "State condtructor!  - Caiman templ" << std::endl;
 }
 
+State::State() {
+    this->name = "noOne";
+    this->hitPoints = 0;
+    this->maxHitPoints = 0;
+    this->damage = 0;
+    this->undead = false;
+    std::cout << "State condtructor! - Empty" << std::endl;
+}
+
 State::~State() {
     // std::cout << "Destructor done!" << std::endl;// WHY few times!!
 }
@@ -35,7 +44,7 @@ int State::getDamage() const {
     return this->damage;
 }
 
-bool State::isUndead() {
+bool State::isUndead() const {
         return this->undead;
     }
 
@@ -109,9 +118,10 @@ void State::summon() {
 
 std::ostream& operator<<(std::ostream& out, const State& state) {
     out << "State info: <" << state.getName() << "> ";
-    out << "with life =" << state.getHitPoints();
+    out << "with life=" << state.getHitPoints();
     out << "/" << state.getMaxHitPoints();
-    out << " and damage =" << state.getDamage() << std::endl;
+    out << " and damage=" << state.getDamage();
+    out << " [undead=" << state.isUndead() << "]" << std::endl;
     out << "\theal koeff = " << state.getHealIndex();// perhaps ADD info for checking
     out << " and battle koeff = " << state.getBattleIndex() << std::endl;// perhaps ADD info for checking
     return out;

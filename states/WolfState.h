@@ -4,7 +4,11 @@
 
 class WolfState : public State {
     public:
-        WolfState();
+        WolfState(const std::string& name = "WOLF",
+                    int maxHP = (int)HP::WOLF,
+                    int dmg = (int)DMG::WOLF,
+                    bool undeadStatus = false);
+        
         virtual ~WolfState();
         
         // virtual void transform(); // doesnt work with the same method TRANSFORM in bouth state

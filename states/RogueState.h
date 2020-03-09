@@ -4,7 +4,12 @@
 
 class RogueState : public State {
     public:
-        RogueState();
+        RogueState(const std::string& name = "ROGUE",
+                    int maxHP = (int)HP::ROGUE,
+                    int dmg = (int)DMG::ROGUE,
+                    bool undeadStatus = false);
+        
+        // RogueState();
         virtual ~RogueState();
 };
 

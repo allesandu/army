@@ -1,10 +1,8 @@
 #include "DemonState.h"
 
-DemonState::DemonState(): State() {
-    this->name = "DEMON";
-    this->hitPoints = (int) HP::DEMON;
-    this->maxHitPoints = (int) HP::DEMON;
-    this->damage = (int) DMG::DEMON;
+DemonState::DemonState(const std::string& name, int maxHP, int dmg, bool undeadStatus)
+            : SoldierState(name, maxHP, dmg, undeadStatus) {
+    std::cout << "DemonState condtructor!  - 032020" << std::endl;
 }
 
 DemonState::~DemonState() {};
