@@ -1,10 +1,12 @@
 #ifndef WIZARD_H
 #define WIZARD_H
-#include "Unit.h"
+#include "SpellCaster.h"
+#include "../states/WizardState.h"
 
-class Wizard : public Unit {
+class Wizard : public SpellCaster {
     public:
-        Wizard();
+        Wizard(WizardState* state = new WizardState());
+        
         virtual ~Wizard();
 };
 

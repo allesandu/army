@@ -1,10 +1,13 @@
 #ifndef NECROMANCER_H
 #define NECROMANCER_H
 #include "Unit.h"
+#include "SpellCaster.h"
+#include "../states/NecromancerState.h"
 
-class Necromancer : public Unit {
+class Necromancer : public SpellCaster {
     public:
-        Necromancer();
+        Necromancer(NecromancerState* state = new NecromancerState());
+        
         virtual ~Necromancer();
         
         virtual void attack(Unit* enemy);

@@ -1,11 +1,14 @@
 #include "Necromancer.h"
-#include "../states/NecromancerState.h"
-#include "../attacks/MagicAttack.h"
 
-Necromancer::Necromancer() : Unit() {
-    this->uState = new NecromancerState();
-    this->uAttack = new MagicAttack();
-    // std::cout << "Necromancer constructor!" << std::endl;
+
+// Necromancer::Necromancer() : Unit() {
+//     this->uState = new NecromancerState();
+//     this->uAttack = new MagicAttack();
+//     // std::cout << "Necromancer constructor!" << std::endl;
+// }
+
+Necromancer::Necromancer(NecromancerState* state) : SpellCaster(state) {
+    std::cout << "Necromancer constructor! - with ANOTHER State|BaseAttack" << std::endl;
 }
 
 Necromancer::~Necromancer() {
@@ -13,7 +16,7 @@ Necromancer::~Necromancer() {
 }
 
 void Necromancer::attack(Unit* enemy) {
-    std::cout << "Necromancer does attachment with attacking GGGG! (class <Necromancer>)" << std::endl;
+    std::cout << "Necromancer does attachment with attack Ggg..! (class <Necromancer>)" << std::endl;
     enemy->attachObserver(this);
     this->uAttack->attack(this, enemy);
 }
