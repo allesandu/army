@@ -1,13 +1,8 @@
 #include "WizardState.h"
 
-WizardState::WizardState() : MagicState() {
-    this->name = "WIZARD";
-    this->hitPoints = (int) HP::WIZARD;
-    this->maxHitPoints = (int) HP::WIZARD;
-    this->damage = (int) DMG::WIZARD;
-    this->magicPower = (int) MAGIC::WIZARD;
-    this->healIndex = 50;
-    // std::cout << "WizardState constructor!" << std::endl;
+WizardState::WizardState(const std::string& name, int maxHp, int dmg, bool undeadStatus, int mPower, int hInd, int bInd)
+        : MagicState(name, maxHp, dmg, undeadStatus, mPower, hInd, bInd) {
+    // std::cout << "WizardState constructor!  - 032020" << std::endl;
 }
 
 WizardState::~WizardState() {

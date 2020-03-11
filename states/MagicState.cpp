@@ -1,8 +1,8 @@
 #include "MagicState.h"
 
-MagicState::MagicState(const std::string name, int maxHp, int dmg, int mPower, int hInd, int bInd)
-     : State(name, maxHp, dmg), magicPower(mPower), healIndex(hInd), battleIndex(bInd), spBook(new SpellBook()) {
-        // std::cout << "Another Magic_State constructor!" << std::endl;
+MagicState::MagicState(const std::string& name, int maxHp, int dmg, bool undeadStatus, int mPower, int hInd, int bInd)
+     : State(name, maxHp, dmg, undeadStatus), magicPower(mPower), healIndex(hInd), battleIndex(bInd), spBook(new SpellBook()) {
+        // std::cout << "Another Magic_State constructor! - 032020" << std::endl;
 }
 
 MagicState::~MagicState() {

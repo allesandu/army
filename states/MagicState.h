@@ -12,12 +12,14 @@ class MagicState : public State {
         SpellBook* spBook;
         
     public:
-        MagicState(const std::string name = "noNameSpeller",
+        MagicState(const std::string& name = "noNameSpeller",
                     int maxHp = 0,
                     int dmg = 0,
+                    bool undeadStatus = false,
                     int mPower = 0,
                     int hInd = 100,
                     int bInd = 100);
+        
         virtual ~MagicState();
         
         virtual int getSpellCost(int spellID) const;

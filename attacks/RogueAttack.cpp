@@ -9,8 +9,6 @@ RogueAttack::~RogueAttack() {
 }
 
 void RogueAttack::attack(Unit* fighter, Unit* enemy) {
-    if ( fighter->isAlive() ) {
-        std::cout << "()() - RogueAttack - ()()" << std::endl;
-        enemy->takeDamage(fighter->getDamage());
-    }
+    std::cout << "()() - RogueAttack - ()()" << std::endl;
+    enemy->takeDamage(fighter->getDamage());
 }

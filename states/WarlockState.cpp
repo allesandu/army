@@ -1,15 +1,9 @@
 #include "WarlockState.h"
 
-WarlockState::WarlockState() : MagicState() {
-    this->name = "WARLOCK";
-    this->hitPoints = (int)HP::WARLOCK;
-    this->maxHitPoints = (int)HP::WARLOCK;
-    this->damage = (int)DMG::WARLOCK;
-    this->magicPower = (int)MAGIC::WARLOCK;
-    
-    this->demonArmy = new std::set<Demon*>();
-    
-    std::cout << "WarlockState constructor!" << std::endl;
+WarlockState::WarlockState(const std::string& name, int maxHp, int dmg, bool undeadStatus, int mPower, int hInd, int bInd)
+        : MagicState(name, maxHp, dmg, undeadStatus, mPower, hInd, bInd) {
+            this->demonArmy = new std::set<Demon*>();
+    // std::cout << "WarlockState constructor!  - 032020" << std::endl;
 }
 
 WarlockState::~WarlockState() {

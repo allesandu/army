@@ -17,9 +17,9 @@ TEST_CASE("test Priest", "[Priest]") {
     REQUIRE( p1->getState()->getBattleIndex() == 50 );
     
     SECTION("Priest: taking damage and points test") {
-        for ( int i = 0; i < 10; i++ ) {
-            p1->takeDamage(10);
-        }
+        // for ( int i = 0; i < 10; i++ ) {
+            p1->takeDamage(100);
+        // }
         REQUIRE( p1->getHitPoints() == 0 );
         
         for ( int i = 0; i < 10; i++ ) {

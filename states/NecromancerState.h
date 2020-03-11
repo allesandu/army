@@ -4,7 +4,14 @@
 
 class NecromancerState : public MagicState {
     public:
-        NecromancerState();
+        NecromancerState(const std::string& name = "NECROMANCER",
+            int maxHp = (int) HP::NECROMANCER,
+            int dmg = (int) DMG::NECROMANCER,
+            bool undeadStatus = true,
+            int mPower = (int) MAGIC::NECROMANCER,
+            int hInd = 100,
+            int bInd = 100);
+        
         virtual ~NecromancerState();
 };
 

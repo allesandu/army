@@ -10,25 +10,21 @@ VampireAttack::~VampireAttack() {
 }
 
 void VampireAttack::attack(Unit* fighter, Unit* enemy) {
-    if ( fighter->isAlive() ) {
-        std::cout << "Vampire Attack!" << std::endl;
-        int helpHP = 10;
-        
-        fighter->takeHitPoints(enemy->getHitPoints()*helpHP/100);
-        enemy->takeDamage(fighter->getDamage());
-        counterAttack(fighter, enemy); // CHECK
-    }
+    std::cout << "Vampire Attack!" << std::endl;
+    int helpHP = 10;
+    
+    fighter->takeHitPoints(enemy->getHitPoints()*helpHP/100);
+    enemy->takeDamage(fighter->getDamage());
+    counterAttack(fighter, enemy); // CHECK
 }
 
 void VampireAttack::counterAttack(Unit* fighter, Unit* enemy) {
-    if ( enemy->isAlive() ) {
-        std::cout << "Vampire counterAttack!" << std::endl;
-        int attackReducer = 50;
-        int hpIndex = 10;
-        
-        fighter->takeHitPoints(enemy->getHitPoints()*hpIndex/100);
-        fighter->takeDamage(enemy->getDamage()*attackReducer/100);
-    }
+    std::cout << "Vampire counterAttack!" << std::endl;
+    int attackReducer = 50;
+    int hpIndex = 10;
+    
+    fighter->takeHitPoints(enemy->getHitPoints()*hpIndex/100);
+    fighter->takeDamage(enemy->getDamage()*attackReducer/100);
 }
 
 void VampireAttack::bite(Unit* target){

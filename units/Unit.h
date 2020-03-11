@@ -18,13 +18,15 @@ class Unit : public IObserver, public IObservable {
         State* uState;
         BaseAttack* uAttack;
         
+        void ensureIsAlive();
+        
     public:
         virtual void attachObserver(IObserver* necromancer);
         virtual void detachObserver(IObserver* necromancer);
         virtual void Notify();
         virtual void Update(IObservable* victim);
         
-        bool isAlive();
+        // bool isAlive();
         
         Unit(const std::string& name = "noOne", int maxHP = 0, int dmg = 0, bool undeadStatus = false);
         Unit(State* state, BaseAttack* attack); // maybe bad idea

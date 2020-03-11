@@ -1,7 +1,7 @@
 #ifndef EXCEPTIONS_H
 #define EXCEPTIONS_H
 
-class EnemyIsDead {};
+class UnitIsDead {};
 class OutOfMana {};
 class EnemyMagicResistant {};
 

@@ -9,7 +9,14 @@ class WarlockState : public MagicState {
             std::set<Demon*>* demonArmy;
         
     public:
-        WarlockState();
+        WarlockState(const std::string& name = "WARLOCK",
+            int maxHp = (int) HP::WARLOCK,
+            int dmg = (int) DMG::WARLOCK,
+            bool undeadStatus = false,
+            int mPower = (int) MAGIC::WARLOCK,
+            int hInd = 100,
+            int bInd = 100);
+        
         virtual ~WarlockState();
         
         virtual void addDemon();

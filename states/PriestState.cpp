@@ -1,13 +1,8 @@
 #include "PriestState.h"
 
-PriestState::PriestState() : MagicState() {
-    this->name = "PRIEST";
-    this->hitPoints = (int)HP::PRIEST;
-    this->maxHitPoints = (int)HP::PRIEST;
-    this->damage = (int)DMG::PRIEST;
-    this->magicPower = (int)MAGIC::PRIEST;
-    this->battleIndex = 50;
-    std::cout << "PriestState constructor!" << std::endl;
+PriestState::PriestState(const std::string& name, int maxHp, int dmg, bool undeadStatus, int mPower, int hInd, int bInd)
+        : MagicState(name, maxHp, dmg, undeadStatus, mPower, hInd, bInd) {
+    // std::cout << "PriestState constructor!  - 032020" << std::endl;
 }
 
 PriestState::~PriestState() {};

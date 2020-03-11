@@ -1,13 +1,8 @@
 #include "NecromancerState.h"
 
-NecromancerState::NecromancerState() : MagicState() {
-    this->name = "NECROMANCER";
-    this->hitPoints = (int)HP::NECROMANCER;
-    this->maxHitPoints = (int)HP::NECROMANCER;
-    this->damage = (int)DMG::NECROMANCER;
-    this->magicPower = (int)MAGIC::NECROMANCER;
-    this->undead = true;
-    // std::cout << "NecromancerState constructor!" << std::endl;
+NecromancerState::NecromancerState(const std::string& name, int maxHp, int dmg, bool undeadStatus, int mPower, int hInd, int bInd)
+        : MagicState(name, maxHp, dmg, undeadStatus, mPower, hInd, bInd) {
+    // std::cout << "NecromancerState constructor!  - 032020" << std::endl;
 }
 
 NecromancerState::~NecromancerState() {

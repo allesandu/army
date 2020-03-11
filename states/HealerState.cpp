@@ -1,13 +1,8 @@
 #include "HealerState.h"
 
-HealerState::HealerState() : MagicState() {
-    this->name = "HEALER";
-    this->hitPoints = (int)HP::HEALER;
-    this->maxHitPoints = (int)HP::HEALER;
-    this->damage = (int)DMG::HEALER;
-    this->magicPower = (int)MAGIC::HEALER;
-    this->battleIndex = 50;
-    // std::cout << "HealerState constructor!" << std::endl;
+HealerState::HealerState(const std::string& name, int maxHp, int dmg, bool undeadStatus, int mPower, int hInd, int bInd)
+        : MagicState(name, maxHp, dmg, undeadStatus, mPower, hInd, bInd) {
+    // std::cout << "HealerState constructor!  - 032020" << std::endl;
 }
 
 HealerState::~HealerState() {};

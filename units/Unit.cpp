@@ -25,8 +25,14 @@ void Unit::Update(IObservable* victim) {
     std::cout << "\ts t a t u s || VICTIM WAS BITTEN BY _ " << this->getName() << std::endl;
 }
 
-bool Unit::isAlive() {
-    return this->getHitPoints() > 0;
+// bool Unit::isAlive() {
+//     return this->getHitPoints() > 0;
+// }
+
+void Unit::ensureIsAlive() {
+    if ( this->getHitPoints() == 0 ) {
+        throw UnitIsDead();
+    }
 }
 
 // Unit::Unit(const std::string& name, int maxHp, int dmg) { // DETELE
@@ -89,6 +95,8 @@ BaseAttack* Unit::getAttack() const {
 }
 
 void Unit::takeDamage(int uDmg) {
+    ensureIsAlive();
+    
     int finalDmg = this->getHitPoints();
     int finalHP = finalDmg - uDmg;
     
@@ -121,9 +129,7 @@ void Unit::setAttack(BaseAttack* newAttack) {
 }
 
 void Unit::attack(Unit* enemy) {
-    if ( enemy->getHitPoints() == 0 ) {
-        throw EnemyIsDead();
-    }
+    ensureIsAlive();
     // std::cout << "Got unit attack!" << std::endl;
     this->uAttack->attack(this, enemy);
 }

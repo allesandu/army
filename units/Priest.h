@@ -2,6 +2,7 @@
 #define PRIEST_H
 #include "SpellCaster.h"
 #include "../states/PriestState.h"
+#include "../attacks/PriestAttack.h"
 // #include "../attacks/MagicAttack.h"
 
 class Priest : public SpellCaster {
