@@ -3,14 +3,15 @@
 #include "Unit.h"
 #include "SpellCaster.h"
 #include "../states/NecromancerState.h"
+#include "../states/NecromancerAttack.h"
 
 class Necromancer : public SpellCaster {
     public:
-        Necromancer(NecromancerState* state = new NecromancerState());
+        Necromancer(NecromancerState* state = new NecromancerState(), NecromancerAttack* attack = new NecromancerAttack());
         
         virtual ~Necromancer();
         
-        virtual void attack(Unit* enemy);
+//         virtual void attack(Unit* enemy);
 };
 
 #endif // NECROMANCER_H
