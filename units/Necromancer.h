@@ -3,7 +3,7 @@
 #include "Unit.h"
 #include "SpellCaster.h"
 #include "../states/NecromancerState.h"
-#include "../states/NecromancerAttack.h"
+#include "../attacks/NecromancerAttack.h"
 
 class Necromancer : public SpellCaster {
     public:

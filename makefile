@@ -38,6 +38,7 @@ compile_all:
 	$(CXX) attacks/WerewolfAttack.cpp $(CXXFLAGS)
 	$(CXX) attacks/MagicAttack.cpp $(CXXFLAGS)
 	$(CXX) attacks/PriestAttack.cpp $(CXXFLAGS)
+	$(CXX) attacks/NecromancerAttack.cpp $(CXXFLAGS)
 	$(CXX) spells/SpellBook.cpp $(CXXFLAGS)
 	$(CXX) spells/BaseSpell.cpp $(CXXFLAGS)
 	$(CXX) spells/RestoreHP.cpp $(CXXFLAGS)

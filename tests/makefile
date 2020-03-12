@@ -38,6 +38,7 @@ compile_all:
 	$(CXX) $(CXXFLAGS) ../attacks/WerewolfAttack.cpp
 	$(CXX) $(CXXFLAGS) ../attacks/MagicAttack.cpp
 	$(CXX) $(CXXFLAGS) ../attacks/PriestAttack.cpp
+	$(CXX) $(CXXFLAGS) ../attacks/NecromancerAttack.cpp
 	$(CXX) $(CXXFLAGS) ../spells/SpellBook.cpp
 	$(CXX) $(CXXFLAGS) ../spells/BaseSpell.cpp
 	$(CXX) $(CXXFLAGS) ../spells/RestoreHP.cpp
