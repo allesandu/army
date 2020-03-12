@@ -2,7 +2,6 @@
 #define HEALER_H
 #include "SpellCaster.h"
 #include "../states/HealerState.h"
-// #include "../attacks/MagicAttack.h"
 
 class Healer : public SpellCaster {
     public:

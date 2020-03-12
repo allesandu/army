@@ -5,5 +5,4 @@ Demon::Demon() : Soldier() {
 }
 
 Demon::~Demon() {
-    std::cout << "Demon destructor!" << std::endl;
 };

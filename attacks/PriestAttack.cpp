@@ -10,7 +10,7 @@ PriestAttack::~PriestAttack() {
 void PriestAttack::magicAttack(Unit* caster, int spellID, Unit* target) {
     int dmg = caster->getState()->getSpellPower(spellID);
     int bInd = caster->getState()->getBattleIndex();;
-    int priestInd;
+    int priestInd = 1;
     
     if ( target->isUndead() ) {
         priestInd = 2;

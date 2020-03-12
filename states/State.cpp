@@ -5,14 +5,6 @@ State::State(const std::string& name, int maxHP, int dmg, bool undeadStatus)
         : name(name), hitPoints(maxHP), maxHitPoints(maxHP), damage(dmg), undead(undeadStatus) {
 }
 
-// State::State() {
-//     this->name = "noOne";
-//     this->hitPoints = 0;
-//     this->maxHitPoints = 0;
-//     this->damage = 0;
-//     this->undead = false;
-// }
-
 State::~State() {
 }
 

@@ -9,8 +9,13 @@ MagicAttack::~MagicAttack() {
 }
 
 void MagicAttack::magicAttack(Unit* caster, int spellID, Unit* target) {
+    int wolfInd = 100;
     int dmg = caster->getState()->getSpellPower(spellID);
     int bInd = caster->getState()->getBattleIndex();
     
-    target->takeDamage(dmg*bInd/100);
+    if ( target->getName() == "WOLF" ) {
+        wolfInd = 120;
+    }
+    
+    target->takeDamage(dmg*bInd*wolfInd/100/100);
 }

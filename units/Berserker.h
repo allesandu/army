@@ -6,11 +6,7 @@
 
 class Berserker : public Unit {
     public:
-    // Berserker(const std::string& name = "BERSERKER",
-    //                 int maxHP = (int)HP::BERSERKER,
-    //                 int dmg = (int)DMG::BERSERKER,
-    //                 bool undeadStatus = false);
-    Berserker();
+        Berserker();
     
     virtual ~Berserker();
 };

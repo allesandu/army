@@ -95,7 +95,7 @@ BaseAttack* Unit::getAttack() const {
 
 void Unit::takeDamage(int uDmg) {
     ensureIsAlive();
-    
+
     int finalDmg = this->getHitPoints();
     int finalHP = finalDmg - uDmg;
     

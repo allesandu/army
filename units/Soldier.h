@@ -8,14 +8,6 @@
 
 class Soldier : public Unit {
     public:
-        
-        // Soldier(SoldierState* soldState = new SoldierState(), BaseAttack* atack = new BaseAttack());
-        
-        // Soldier(const std::string& name = "SOLDIER",
-        //         int maxHP = (int)HP::SOLDIER,
-        //         int dmg = (int)DMG::SOLDIER,
-        //         bool undeadStatus = false);
-        
         Soldier();
         
         virtual ~Soldier();

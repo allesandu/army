@@ -10,8 +10,6 @@ class Necromancer : public SpellCaster {
         Necromancer(NecromancerState* state = new NecromancerState(), NecromancerAttack* attack = new NecromancerAttack());
         
         virtual ~Necromancer();
-        
-//         virtual void attack(Unit* enemy);
 };
 
 #endif // NECROMANCER_H
