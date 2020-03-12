@@ -1,11 +1,11 @@
 #ifndef PRIESTATTACK_H
 #define PRIESTATTACK_H
-#include "BaseAttack.h"
-// #include "MagicAttack.h"
+// #include "BaseAttack.h"
+#include "MagicAttack.h"
 
 class Unit;
 
-class PriestAttack : public BaseAttack {
+class PriestAttack : public MagicAttack {
     public:
         PriestAttack();
         virtual ~PriestAttack();

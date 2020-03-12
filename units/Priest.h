@@ -7,7 +7,7 @@
 
 class Priest : public SpellCaster {
     public:
-        Priest(PriestState* state = new PriestState());
+        Priest(PriestState* state = new PriestState(), PriestAttack* attack = new PriestAttack());
         
         virtual ~Priest();
 };

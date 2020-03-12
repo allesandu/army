@@ -1,6 +1,6 @@
 #include "PriestAttack.h"
 
-PriestAttack::PriestAttack() : BaseAttack() {
+PriestAttack::PriestAttack() : MagicAttack() {
     std::cout << "PriestAttack constructor!" << std::endl;;
 }
 

@@ -7,8 +7,12 @@
 //     std::cout << "Priest constructor!" << std::endl;
 // }
 
-Priest::Priest(PriestState* state) : SpellCaster(state) {
-    this->uAttack = new PriestAttack(); // check is it works !!!
+// Priest::Priest(PriestState* state) : SpellCaster(state) {
+//     this->uAttack = new PriestAttack(); // check is it works !!!
+//     std::cout << "Priest constructor! - with ANOTHER State|BaseAttack" << std::endl;
+// }
+
+Priest::Priest(PriestState* state, PriestAttack* attack) : SpellCaster(state, attack) {
     std::cout << "Priest constructor! - with ANOTHER State|BaseAttack" << std::endl;
 }
 
