@@ -9,7 +9,6 @@ class BerserkerState : public State {
                     int dmg = (int)DMG::BERSERKER,
                     bool undeadStatus = false);
         
-        // BerserkerState();
         virtual ~BerserkerState();
 };
 

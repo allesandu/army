@@ -41,23 +41,22 @@ void Unit::ensureIsAlive() {
 //     std::cout << "---------------------- UNIT constructor! ----------" << std::endl;// DETELE
 // }
 
-Unit::Unit(const std::string& name, int maxHp, int dmg, bool undeadStatus)
-    : uState(new State(name, maxHp, dmg, undeadStatus)),
-    uAttack(new BaseAttack()) {
-        this->lstObserv = new std::set<IObserver*>();
-        std::cout << "-------------- UNIT constructor! Caiman-temp-" << std::endl;// DETELE
-}
+// Unit::Unit(const std::string& name, int maxHp, int dmg, bool undeadStatus)
+//     : uState(new State(name, maxHp, dmg, undeadStatus)),
+//     uAttack(new BaseAttack()) {
+//         this->lstObserv = new std::set<IObserver*>();
+//         std::cout << "-------------- UNIT constructor! Caiman-temp-" << std::endl;// DETELE
+// }
 
 Unit::Unit(State* state, BaseAttack* attack)
-    : uState(state),// dont know hot to create proper State_constructor !!! - maybe bad idea
+    : uState(state),
     uAttack(attack) {
     
     this->lstObserv = new std::set<IObserver*>();
-    std::cout << "------------- UNIT constructor!  - with ANOTHER State|BaseAttack---" << std::endl;
+
 }
 
 Unit::~Unit() {
-    std::cout << "---------------------- UNIT destructor! -----------" << std::endl;
     delete this->uState;
     delete this->uAttack;
 }
@@ -111,21 +110,20 @@ void Unit::takeDamage(int uDmg) {
 }
 
 void Unit::takeHitPoints(int enemyHP) {
-    // std::cout << "Got HP !" << std::endl;
     this->uState->takeHitPoints(enemyHP);
 }
 
 void Unit::setState(State* newState) {
     delete this->uState;
-    std::cout << "0000 - STATE has changed (class <Unit>)" << std::endl;
+
     this->uState = newState;
-    // this->uState->setState(newState); // maybe dont need
+
 }
 void Unit::setAttack(BaseAttack* newAttack) {
     delete this->uAttack;
-    std::cout << "0000 - ATTACK has changed (class <Unit>)" << std::endl;
+
     this->uAttack = newAttack;
-    // this->uState->setAttack(newAttack);
+
 }
 
 void Unit::attack(Unit* enemy) {
@@ -161,11 +159,9 @@ void Unit::cast(int spellID, Unit* target) {
     
     if ( castSpellType == "BATTLE" ) {
         this->uAttack->magicAttack(this, spellID, target);
-        std::cout << "Your cast has BATTLE type +****+" << std::endl;
     }
     if ( castSpellType == "HEAL" ) {
         this->uState->takeHitPoints(this, spellID, target);
-        std::cout << "You use HEAL spell - well done!" << std::endl;
     }
 }
 
@@ -177,12 +173,10 @@ void Unit::cast() {
 }
 
 void Unit::transform() {
-    std::cout << "0000 - attempt to change STATE (class <Unit>)" << std::endl;
     this->uState->transform();
 }
 
 void Unit::bite(Unit* target) {
-    std::cout << "0000 - attempt to change UNIT (class <Unit>)" << std::endl;
     this->uAttack->bite(target);
 }
 

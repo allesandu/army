@@ -5,7 +5,6 @@
 
 class VampireState : public State {
     public:
-        // VampireState();
         VampireState(const std::string& name = "VAMPIRE",
                     int maxHP = (int)HP::VAMPIRE,
                     int dmg = (int)DMG::VAMPIRE,

@@ -4,7 +4,8 @@
 #include "../units/Priest.h"
 #include "../units/Warlock.h"
 #include "../units/Necromancer.h"
-#include "../congig.h"
+#include "../config.h"
+#include "../Exceptions.h"
 #include "catch.hpp"
 
 TEST_CASE("test Berserker", "[Berserker]") {
@@ -25,31 +26,46 @@ TEST_CASE("test Berserker", "[Berserker]") {
     REQUIRE( b1->getState()->getSpellCost(4) == 0 );
     REQUIRE( b1->getState()->getSpellPower(4) == 0 );
     
-    wiz1->cast(SPELL::MAGICARROW, b1);// dmg25, cost35
-    h1->cast(SPELL::MAGICARROW, b1);
-    p1->cast(SPELL::MAGICARROW, b1);
-    wl1->cast(SPELL::MAGICARROW, b1);
-    nm1->cast(SPELL::MAGICARROW, b1);
-    
-    h1->cast(SPELL::RESTOREHP, b1);cost20
     
     SECTION("Berserker_MagicAttack: without getting magicdamage") {
-    
+        try {
+            wiz1->cast(SPELL::MAGICARROW, b1);
+        } catch ( EnemyMagicResistant e ) {
+            REQUIRE( b1->getHitPoints() == 140 );
+            REQUIRE( wiz1->getHitPoints() == 80 );
+            REQUIRE( wiz1->getMagicPower() == 100 );
+        }
+        
+        try {
+            h1->cast(SPELL::MAGICARROW, b1);
+        } catch ( EnemyMagicResistant e ) {
         REQUIRE( b1->getHitPoints() == 140 );
-        
-        REQUIRE( wiz1->getHitPoints() == 80 );
-        REQUIRE( wiz1->getMagicPower() == 65 );
-        
         REQUIRE( h1->getHitPoints() == 75 );
-        REQUIRE( h1->getMagicPower() == 35 );
+        REQUIRE( h1->getMagicPower() == 90 );
+        }
         
+        try {
+            p1->cast(SPELL::MAGICARROW, b1);
+        } catch ( EnemyMagicResistant e ) {
+        REQUIRE( b1->getHitPoints() == 140 );
         REQUIRE( p1->getHitPoints() == 90 );
-        REQUIRE( p1->getMagicPower() == 45 );
+        REQUIRE( p1->getMagicPower() == 80 );
+        }
         
+        try {
+            wl1->cast(SPELL::MAGICARROW, b1);
+        } catch ( EnemyMagicResistant e ) {
+        REQUIRE( b1->getHitPoints() == 140 );
         REQUIRE( wl1->getHitPoints() == 100 );
-        REQUIRE( wl1->getMagicPower() == 40 );
+        REQUIRE( wl1->getMagicPower() == 75 );
+        }
         
+        try {
+            nm1->cast(SPELL::MAGICARROW, b1);
+        } catch ( EnemyMagicResistant e ) {
+        REQUIRE( b1->getHitPoints() == 140 );
         REQUIRE( nm1->getHitPoints() == 190 );
-        REQUIRE( nm1->getMagicPower() == 95 );
+        REQUIRE( nm1->getMagicPower() == 130 );
+        }
     }
 }

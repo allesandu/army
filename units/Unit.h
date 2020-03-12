@@ -26,10 +26,9 @@ class Unit : public IObserver, public IObservable {
         virtual void Notify();
         virtual void Update(IObservable* victim);
         
-        // bool isAlive();
         
-        Unit(const std::string& name = "noOne", int maxHP = 0, int dmg = 0, bool undeadStatus = false);
-        Unit(State* state, BaseAttack* attack); // maybe bad idea
+        // Unit(const std::string& name = "noOne", int maxHP = 0, int dmg = 0, bool undeadStatus = false);
+        Unit(State* state, BaseAttack* attack);
         
         virtual ~Unit();
         

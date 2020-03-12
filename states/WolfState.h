@@ -10,8 +10,6 @@ class WolfState : public State {
                     bool undeadStatus = false);
         
         virtual ~WolfState();
-        
-        // virtual void transform(); // doesnt work with the same method TRANSFORM in bouth state
 };
 
 #endif // WOLFSTATE_H

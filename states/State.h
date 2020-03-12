@@ -15,7 +15,7 @@ class State {
     
     public:
         State(const std::string& name = "noOne", int maxHP = 0, int dmg = 0, bool undeadStatus = false);
-        State();
+        // State();
         
         virtual ~State();
         
