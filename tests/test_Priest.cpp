@@ -17,16 +17,24 @@ TEST_CASE("test Priest", "[Priest]") {
     REQUIRE( p1->getState()->getBattleIndex() == 50 );
     
     SECTION("Priest: taking damage and points test") {
-        // for ( int i = 0; i < 10; i++ ) {
-            p1->takeDamage(100);
-        // }
+        int damage = 10;
+        int iteration = p1->getHitPoints() / damage;
+        
+        for ( int i = 0; i < iteration; i++ ) {
+            p1->takeDamage(damage);
+        }
         REQUIRE( p1->getHitPoints() == 0 );
+        
+        try {
+            p1->takeDamage(damage);
+        } catch ( UnitIsDead e ) {
+            REQUIRE( p1->getHitPoints() == 0 );
+        }
         
         for ( int i = 0; i < 10; i++ ) {
             p1->takeHitPoints(10);
         }
         REQUIRE( p1->getHitPoints() == 90 );
-        
     }
     
     SECTION("Priest: BaseAttack test") {
@@ -35,4 +43,5 @@ TEST_CASE("test Priest", "[Priest]") {
         REQUIRE( p1->getHitPoints() == 78 );
         REQUIRE( p2->getHitPoints() == 65 );
     }
+    
 }
