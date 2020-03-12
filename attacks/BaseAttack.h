@@ -14,9 +14,6 @@ class BaseAttack {
         virtual void attack(Unit* fighter, Unit* enemy);
         virtual void counterAttack(Unit* fighter, Unit* emeny);
         
-        // void setAttack(BaseAttack* newAttack);// hz what to do
-        // BaseAttack& operator=(const BaseAttack& newAttack); // hz what to do
-        
         virtual void magicAttack(Unit* caster, int spellID, Unit* enemy);
         virtual void bite(Unit* target);
 };

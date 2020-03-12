@@ -58,6 +58,7 @@ compile_all:
 	$(CXX) $(CXXFLAGS) test_Demon.cpp
 	$(CXX) $(CXXFLAGS) test_SummonSpell.cpp
 	$(CXX) $(CXXFLAGS) test_VampireBite.cpp
+	$(CXX) $(CXXFLAGS) test_WerewolfBite.cpp
 	$(CXX) $(CXXFLAGS) main.cpp
 all:compile_all
 	$(CXX) *.o -o test.out && ./test.out

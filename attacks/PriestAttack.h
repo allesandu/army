@@ -1,6 +1,5 @@
 #ifndef PRIESTATTACK_H
 #define PRIESTATTACK_H
-// #include "BaseAttack.h"
 #include "MagicAttack.h"
 
 class Unit;
