@@ -12,6 +12,7 @@ class Ability {
         
         virtual void action(Unit* target);
         virtual void action();
+        virtual void transform(Unit* werewolf);
 };
 
 #endif // ABILITY_H

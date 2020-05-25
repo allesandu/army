@@ -45,6 +45,10 @@ compile_all:
 	$(CXX) $(CXXFLAGS) ../spells/MagicArrow.cpp
 	$(CXX) $(CXXFLAGS) ../spells/FireBall.cpp
 	$(CXX) $(CXXFLAGS) ../spells/SummonSpell.cpp
+	$(CXX) $(CXXFLAGS) ../abilities/Ability.cpp
+	$(CXX) $(CXXFLAGS) ../abilities/VampireAbility.cpp
+	$(CXX) $(CXXFLAGS) ../abilities/WarlockAbility.cpp
+	$(CXX) $(CXXFLAGS) ../abilities/WerewolfAbility.cpp
 	$(CXX) $(CXXFLAGS) test_Soldier.cpp
 	$(CXX) $(CXXFLAGS) test_Rogue.cpp
 	$(CXX) $(CXXFLAGS) test_Berserker.cpp

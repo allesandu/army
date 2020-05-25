@@ -167,20 +167,29 @@ void Unit::cast(int spellID, Unit* target) {
     }
 }
 
-void Unit::cast() {
-    if ( this->getName() == "WARLOCK" ) {
-        this->castImplement(SPELL::SUMMONSPELL);
-        this->uAbility->action();
-    }
-}
+// void Unit::cast() { // remove
+//     if ( this->getName() == "WARLOCK" ) {
+//         this->castImplement(SPELL::SUMMONSPELL);
+//         this->uAbility->action();
+//     }
+// }
 
-void Unit::transform() {
-    this->uState->transform();
-}
+// void Unit::transform() {
+//     this->uState->transform();
+// }
 
 // void Unit::bite(Unit* target) { // remove
 //     this->uAttack->bite(target);
 // }
+
+void Unit::action() {
+    if ( this->getName() == "WARLOCK" ) {
+        this->castImplement(SPELL::SUMMONSPELL);
+        this->uAbility->action();
+    }
+    
+    this->uAbility->transform(this);
+}
 
 void Unit::action(Unit* target) {
     this->uAbility->action(target);

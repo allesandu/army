@@ -16,7 +16,7 @@ class WarlockAbility : public Ability {
         WarlockAbility();
         virtual ~WarlockAbility();
         
-        virtual void action();
+        void action();
         void summon();
         
         void addDemon();

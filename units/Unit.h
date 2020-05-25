@@ -56,12 +56,13 @@ class Unit : public IObserver, public IObservable {
         
         void castImplement(int spellID);
         void cast(int spellID, Unit* target);
-        void cast();// special for Warlock
+        // void cast();// special for Warlock
         
-        void transform(); // remove
+        // void transform(); // remove
         // void bite(Unit* target); // remove
         
-        virtual void action(Unit* target); // virtual void action(Unit* target) = 0;
+        void action();// special for Warlock
+        void action(Unit* target); // virtual void action(Unit* target) = 0; - maybe not needed
 };
 
 std::ostream& operator<<(std::ostream& out, const Unit& unit);

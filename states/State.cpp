@@ -81,11 +81,11 @@ void State::setState(State* newState) {
     this->damage = newState->damage;
 }
 
-void State::transform() {
+// void State::transform() { // remove
 
-}
+// }
 
-// void State::summon() {
+// void State::summon() { // remove
 
 // }
 

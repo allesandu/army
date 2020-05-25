@@ -36,8 +36,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
     Necromancer* nm2 = new Necromancer();
     
     SECTION("Vampire_bite: transformation from Soldier") {
-        v1->bite(s1);
-        s1->bite(s2);
+        v1->action(s1);
+        s1->action(s2);
         
         REQUIRE( s1->getName() == "VAMPIRE" );
         REQUIRE( s1->getHitPoints() == 200 );
@@ -60,8 +60,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
     }
     
     SECTION("Vampire_bite: transformation from Rogue") {
-        v1->bite(r1);
-        r1->bite(r2);
+        v1->action(r1);
+        r1->action(r2);
         
         REQUIRE( r1->getName() == "VAMPIRE" );
         REQUIRE( r1->getHitPoints() == 200 );
@@ -83,8 +83,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
     }
     
     SECTION("Vampire_bite: transformation from Berserker") {
-        v1->bite(b1);
-        b1->bite(b2);
+        v1->action(b1);
+        b1->action(b2);
         
         REQUIRE( b1->getName() == "VAMPIRE" );
         REQUIRE( b1->getHitPoints() == 200 );
@@ -106,7 +106,7 @@ TEST_CASE("test Vampire_bite", "[bite]") {
     }
     
     SECTION("Vampire_bite: transformation from Werewolf") {
-        v1->bite(ww1);
+        v1->action(ww1);
         
         
         REQUIRE( ww1->getName() == "WEREWOLF" );
@@ -118,8 +118,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
         REQUIRE( ww1->getState()->getSpellCost(4) == 0 );
         REQUIRE( ww1->getState()->getSpellPower(4) == 0 );
         
-        ww1->transform();
-        v1->bite(ww1);
+        ww1->action();
+        v1->action(ww1);
         
         REQUIRE( ww1->getName() == "WOLF" );
         REQUIRE( ww1->getHitPoints() == 230 );
@@ -132,8 +132,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
     }
     
     SECTION("Vampire_bite: transformation from Demon") {
-        v1->bite(d1);
-        d1->bite(d2);
+        v1->action(d1);
+        d1->action(d2);
         
         REQUIRE( d1->getName() == "VAMPIRE" );
         REQUIRE( d1->getHitPoints() == 200 );
@@ -155,8 +155,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
     }
     
     SECTION("Vampire_bite: transformation from Wizard") {
-        v1->bite(wiz1);
-        wiz1->bite(wiz2);
+        v1->action(wiz1);
+        wiz1->action(wiz2);
         
         REQUIRE( wiz1->getName() == "VAMPIRE" );
         REQUIRE( wiz1->getHitPoints() == 200 );
@@ -178,8 +178,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
     }
     
     SECTION("Vampire_bite: transformation from Healer") {
-        v1->bite(h1);
-        h1->bite(h2);
+        v1->action(h1);
+        h1->action(h2);
         
         REQUIRE( h1->getName() == "VAMPIRE" );
         REQUIRE( h1->getHitPoints() == 200 );
@@ -201,8 +201,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
     }
     
     SECTION("Vampire_bite: transformation from Priest") {
-        v1->bite(p1);
-        p1->bite(p2);
+        v1->action(p1);
+        p1->action(p2);
         
         REQUIRE( p1->getName() == "VAMPIRE" );
         REQUIRE( p1->getHitPoints() == 200 );
@@ -224,8 +224,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
     }
     
     SECTION("Vampire_bite: transformation from Warlock") {
-        v1->bite(wl1);
-        wl1->bite(wl2);
+        v1->action(wl1);
+        wl1->action(wl2);
         
         REQUIRE( wl1->getName() == "VAMPIRE" );
         REQUIRE( wl1->getHitPoints() == 200 );
@@ -247,8 +247,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
     }
     
     SECTION("Vampire_bite: transformation from Necromancer") {
-        v1->bite(nm1);
-        nm1->bite(nm2);
+        v1->action(nm1);
+        nm1->action(nm2);
         
         REQUIRE( nm1->getName() == "VAMPIRE" );
         REQUIRE( nm1->getHitPoints() == 200 );

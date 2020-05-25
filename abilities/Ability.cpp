@@ -11,3 +11,7 @@ void Ability::action(Unit* target) {
 void Ability::action() {
     throw NoSpecialAbility();
 }
+
+void Ability::transform(Unit* werewolf) {
+    throw NoSpecialAbilityTransform();
+}

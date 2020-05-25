@@ -39,7 +39,7 @@ class State {
         
         void setState(State* newState);
         
-        virtual void transform();
+        // virtual void transform();
         // virtual void summon(); // remove
         
 };

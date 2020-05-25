@@ -6,5 +6,6 @@ class OutOfMana {};
 class EnemyMagicResistant {};
 class NoSpecialAbility {};
 class NoSpecialAbilityBite {};
+class NoSpecialAbilityTransform {};
 
 #endif // EXCEPTIONS_H

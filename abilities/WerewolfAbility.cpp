@@ -6,7 +6,7 @@ WerewolfAbility::~WerewolfAbility() {}
 
 void WerewolfAbility::action(Unit* target) {
     this->bite(target);
-    std::cout << "Transformation to Werewolf done <WerewolfAbility class>" << std::endl;
+    std::cout << "Transformation to Werewolf after BITE done <WerewolfAbility class>" << std::endl;
 }
 
 void WerewolfAbility::bite(Unit* target) {
@@ -15,4 +15,14 @@ void WerewolfAbility::bite(Unit* target) {
         target->setAttack(new WerewolfAttack());
         target->setAbility(new WerewolfAbility());
     }
+}
+
+void WerewolfAbility::transform(Unit* werewolf) {
+    if ( werewolf->getName() == "WOLF" ) {
+        werewolf->setState(new WerewolfState());
+    } else {
+        werewolf->setState(new WolfState());
+    }
+    
+    std::cout << "Selftranformation Werewolf <--> Wolf done <WerewolfAbility class>" << std::endl;
 }

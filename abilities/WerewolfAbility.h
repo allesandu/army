@@ -2,6 +2,7 @@
 #define WEREWOLFABILITY_H
 #include "../units/Unit.h"
 #include "../states/WerewolfState.h"
+#include "../states/WolfState.h"
 #include "../attacks/WerewolfAttack.h"
 #include "Ability.h"
 #include "../Exceptions.h"
@@ -13,8 +14,10 @@ class WerewolfAbility : public Ability {
         WerewolfAbility();
         virtual ~WerewolfAbility();
         
-        virtual void action(Unit* target);
+        void action(Unit* target);
         void bite(Unit* target);
+        
+        void transform(Unit* werewolf);
 };
 
 #endif // WEREWOLFABILITY_H

@@ -13,7 +13,7 @@ class VampireAbility : public Ability {
         VampireAbility();
         virtual ~VampireAbility();
         
-        virtual void action(Unit* target);
+        void action(Unit* target);
         void bite(Unit* target);
 };
 

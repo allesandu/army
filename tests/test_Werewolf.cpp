@@ -28,7 +28,7 @@ TEST_CASE( "test Werewolf", "[Werewolf]" ) {
     REQUIRE( ww1->getState()->getSpellPower(4) == 0 );
     
     SECTION( "Werewolf: tranformation test Werewolf-Wolf" ) {
-        ww1->transform();
+        ww1->action();
         
         REQUIRE( ww1->getName() == "WOLF" );
         REQUIRE( ww1->getHitPoints() == 230 );
@@ -39,7 +39,7 @@ TEST_CASE( "test Werewolf", "[Werewolf]" ) {
         REQUIRE( ww1->getState()->getSpellCost(4) == 0 );
         REQUIRE( ww1->getState()->getSpellPower(4) == 0 );
         
-        ww1->transform();
+        ww1->action();
         
         REQUIRE( ww1->getName() == "WEREWOLF" );
         REQUIRE( ww1->getHitPoints() == 180 );
@@ -59,7 +59,7 @@ TEST_CASE( "test Werewolf", "[Werewolf]" ) {
         REQUIRE( wiz1->getHitPoints() == 80 );
         REQUIRE( wiz1->getMagicPower() == 65 );
         
-        ww1->transform();
+        ww1->action();
         
         wiz1->cast(SPELL::MAGICARROW,ww1);//25, 35
         
