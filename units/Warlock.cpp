@@ -1,6 +1,7 @@
 #include "Warlock.h"
 
-Warlock::Warlock(WarlockState* state) : SpellCaster(state) {
+Warlock::Warlock(WarlockState* state, MagicAttack* magAttack, WarlockAbility* ability)
+        : SpellCaster(state, magAttack, ability) {
 
 }
 

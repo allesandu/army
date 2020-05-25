@@ -3,10 +3,13 @@
 #include "Unit.h"
 #include "../states/MagicState.h"
 #include "../attacks/MagicAttack.h"
+#include "../abilities/Ability.h"
 
 class SpellCaster : public Unit {
     public:
-        SpellCaster(MagicState* magState, MagicAttack* magAttack = new MagicAttack());
+        SpellCaster(MagicState* magState, MagicAttack* magAttack = new MagicAttack(),
+                    Ability* ability = new Ability());
+        
         virtual ~SpellCaster();
 };
 

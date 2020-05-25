@@ -52,6 +52,6 @@ void MagicState::takeHitPoints(Unit* caster, int spellID, Unit* target) {
 
 }
 
-void MagicState::summon() {
+// void MagicState::summon() { // remove
 
-}
+// }

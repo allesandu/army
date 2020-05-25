@@ -6,17 +6,19 @@
 #include "IObservable.h"
 #include "../states/State.h"
 #include "../attacks/BaseAttack.h"
+#include "../abilities/Ability.h"
 #include "../Exceptions.h"
 #include "../config.h"
 
 class BaseAttack;
 class State;
+class Ability;
 
 class Unit : public IObserver, public IObservable {
-// class Unit {
     protected:
         State* uState;
         BaseAttack* uAttack;
+        Ability* uAbility;
         
         void ensureIsAlive();
         
@@ -27,8 +29,8 @@ class Unit : public IObserver, public IObservable {
         virtual void Update(IObservable* victim);
         
         
-        // Unit(const std::string& name = "noOne", int maxHP = 0, int dmg = 0, bool undeadStatus = false);
-        Unit(State* state, BaseAttack* attack);
+        // Unit(State* state, BaseAttack* attack);
+        Unit(State* state, BaseAttack* attack, Ability* ability);
         
         virtual ~Unit();
         
@@ -47,6 +49,7 @@ class Unit : public IObserver, public IObservable {
         
         void setState(State* newState);
         void setAttack(BaseAttack* newAttack);
+        void setAbility(Ability* newAbility);
         
         virtual void attack(Unit* enemy);
         virtual void counterAttack(Unit* enemy);
@@ -54,8 +57,11 @@ class Unit : public IObserver, public IObservable {
         void castImplement(int spellID);
         void cast(int spellID, Unit* target);
         void cast();// special for Warlock
-        void transform();
-        void bite(Unit* target);
+        
+        void transform(); // remove
+        // void bite(Unit* target); // remove
+        
+        virtual void action(Unit* target); // virtual void action(Unit* target) = 0;
 };
 
 std::ostream& operator<<(std::ostream& out, const Unit& unit);

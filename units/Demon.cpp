@@ -4,5 +4,4 @@ Demon::Demon() : Soldier() {
     this->uState = new DemonState();
 }
 
-Demon::~Demon() {
-};
+Demon::~Demon() {};

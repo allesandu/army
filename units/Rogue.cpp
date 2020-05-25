@@ -1,9 +1,7 @@
 #include "Rogue.h"
-#include "../attacks/RogueAttack.h"
-#include "../states/RogueState.h"
 
 Rogue::Rogue()
-        : Unit(new RogueState(), new RogueAttack()) {
+        : Unit(new RogueState(), new RogueAttack(), new Ability()) {
 }
 
 Rogue::~Rogue() {

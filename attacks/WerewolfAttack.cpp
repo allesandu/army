@@ -9,9 +9,9 @@ WerewolfAttack::~WerewolfAttack() {
 
 }
 
-void WerewolfAttack::bite(Unit* target) {
-    if ( target->getName() != "VAMPIRE" ) {
-        target->setState(new WerewolfState());
-        target->setAttack(new WerewolfAttack());
-    }
-}
+// void WerewolfAttack::bite(Unit* target) {
+//     if ( target->getName() != "VAMPIRE" ) {
+//         target->setState(new WerewolfState());
+//         target->setAttack(new WerewolfAttack());
+//     }
+// }

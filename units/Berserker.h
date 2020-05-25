@@ -3,6 +3,7 @@
 #include "Unit.h"
 #include "../states/BerserkerState.h"
 #include "../attacks/BaseAttack.h"
+#include "../abilities/Ability.h"
 
 class Berserker : public Unit {
     public:

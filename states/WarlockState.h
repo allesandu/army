@@ -1,12 +1,12 @@
 #ifndef WARLOCKSTATE_H
 #define WARLOCKSTATE_H
 #include "MagicState.h"
-#include "../units/Demon.h"
-#include <set>
+// #include "../units/Demon.h" // remove
+// #include <set>
 
 class WarlockState : public MagicState {
-    protected:
-            std::set<Demon*>* demonArmy;
+    // protected: // remove
+    //         std::set<Demon*>* demonArmy;
         
     public:
         WarlockState(const std::string& name = "WARLOCK",
@@ -19,10 +19,10 @@ class WarlockState : public MagicState {
         
         virtual ~WarlockState();
         
-        virtual void addDemon();
-        virtual void summon();
+        // virtual void addDemon(); // remove
+        // virtual void summon();
         
-        virtual void getDemonArmy();
+        // virtual void getDemonArmy();
 };
 
 #endif // WARLOCKSTATE_H

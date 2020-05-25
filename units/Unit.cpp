@@ -35,30 +35,25 @@ void Unit::ensureIsAlive() {
     }
 }
 
-// Unit::Unit(const std::string& name, int maxHp, int dmg) { // DETELE
-//     this->uState = new State(name, maxHp, dmg);// DETELE
-//     this->lstObserv = new std::set<IObserver*>();// DETELE
-//     std::cout << "---------------------- UNIT constructor! ----------" << std::endl;// DETELE
+// Unit::Unit(State* state, BaseAttack* attack)
+//     : uState(state),
+//     uAttack(attack) {
+    
+//     this->lstObserv = new std::set<IObserver*>();
 // }
 
-// Unit::Unit(const std::string& name, int maxHp, int dmg, bool undeadStatus)
-//     : uState(new State(name, maxHp, dmg, undeadStatus)),
-//     uAttack(new BaseAttack()) {
-//         this->lstObserv = new std::set<IObserver*>();
-//         std::cout << "-------------- UNIT constructor! Caiman-temp-" << std::endl;// DETELE
-// }
-
-Unit::Unit(State* state, BaseAttack* attack)
+Unit::Unit(State* state, BaseAttack* attack, Ability* ability)
     : uState(state),
-    uAttack(attack) {
+    uAttack(attack),
+    uAbility(ability) {
     
     this->lstObserv = new std::set<IObserver*>();
-
 }
 
 Unit::~Unit() {
     delete this->uState;
     delete this->uAttack;
+    delete this->uAbility;
 }
 
 const std::string& Unit::getName() const {
@@ -119,11 +114,18 @@ void Unit::setState(State* newState) {
     this->uState = newState;
 
 }
+
 void Unit::setAttack(BaseAttack* newAttack) {
     delete this->uAttack;
 
     this->uAttack = newAttack;
 
+}
+
+void Unit::setAbility(Ability* newAbility) {
+    delete this->uAbility;
+    
+    this->uAbility = newAbility;
 }
 
 void Unit::attack(Unit* enemy) {
@@ -168,7 +170,7 @@ void Unit::cast(int spellID, Unit* target) {
 void Unit::cast() {
     if ( this->getName() == "WARLOCK" ) {
         this->castImplement(SPELL::SUMMONSPELL);
-        this->uState->summon();
+        this->uAbility->action();
     }
 }
 
@@ -176,8 +178,12 @@ void Unit::transform() {
     this->uState->transform();
 }
 
-void Unit::bite(Unit* target) {
-    this->uAttack->bite(target);
+// void Unit::bite(Unit* target) { // remove
+//     this->uAttack->bite(target);
+// }
+
+void Unit::action(Unit* target) {
+    this->uAbility->action(target);
 }
 
 std::ostream& operator<<(std::ostream& out, const Unit& unit) {

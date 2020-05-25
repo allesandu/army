@@ -85,9 +85,9 @@ void State::transform() {
 
 }
 
-void State::summon() {
+// void State::summon() {
 
-}
+// }
 
 std::ostream& operator<<(std::ostream& out, const State& state) {
     out << "State info: <" << state.getName() << "> ";

@@ -1,6 +1,7 @@
 #ifndef ROGUESTATE_H
 #define ROGUESTATE_H
 #include "State.h"
+#include "../config.h"
 
 class RogueState : public State {
     public:
@@ -9,7 +10,6 @@ class RogueState : public State {
                     int dmg = (int)DMG::ROGUE,
                     bool undeadStatus = false);
         
-        // RogueState();
         virtual ~RogueState();
 };
 

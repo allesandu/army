@@ -11,7 +11,7 @@ class VampireAttack : public BaseAttack {
         
         virtual void attack(Unit* fighter, Unit* enemy);
         virtual void counterAttack(Unit* fighter, Unit* enemy);
-        virtual void bite(Unit* target);
+        // virtual void bite(Unit* target);// remove
 };
 
 #endif // VAMPIREATTACK_H

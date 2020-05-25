@@ -1,6 +1,7 @@
 #ifndef BERSERKERSTATE_H
 #define BERSERKERSTATE_H
 #include "State.h"
+#include "../config.h"
 
 class BerserkerState : public State {
     public:

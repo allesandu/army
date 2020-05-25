@@ -7,7 +7,7 @@ class WerewolfAttack : public BaseAttack {
         WerewolfAttack();
         virtual ~WerewolfAttack();
         
-        virtual void bite(Unit* target);
+        // virtual void bite(Unit* target); // remove
 };
 
 #endif // WEREWOLFATTACK_H

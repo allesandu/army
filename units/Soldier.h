@@ -5,6 +5,7 @@
 #include "Soldier.h"
 #include "../states/SoldierState.h"
 #include "../attacks/BaseAttack.h"
+#include "../abilities/Ability.h"
 
 class Soldier : public Unit {
     public:

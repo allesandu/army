@@ -3,6 +3,7 @@
 #include "Unit.h"
 #include "../attacks/VampireAttack.h"
 #include "../states/VampireState.h"
+#include "../abilities/VampireAbility.h"
 #include "../config.h"
 
 class Vampire : public Unit {

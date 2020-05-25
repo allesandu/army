@@ -45,5 +45,9 @@ compile_all:
 	$(CXX) spells/MagicArrow.cpp $(CXXFLAGS)
 	$(CXX) spells/FireBall.cpp $(CXXFLAGS)
 	$(CXX) spells/SummonSpell.cpp $(CXXFLAGS)
+	$(CXX) abilities/Ability.cpp $(CXXFLAGS)
+	$(CXX) abilities/VampireAbility.cpp $(CXXFLAGS)
+	$(CXX) abilities/WarlockAbility.cpp $(CXXFLAGS)
+	$(CXX) abilities/WerewolfAbility.cpp $(CXXFLAGS)
 all:compile_all
 	$(CXX) run.cpp *.o && clear && ./a.out

@@ -34,7 +34,7 @@ class MagicState : public State {
         
         virtual void takeHitPoints(Unit* caster, int spellID, Unit* target);
         
-        virtual void summon();
+        // virtual void summon(); remove 
 };
 
 #endif // MAGICSTATE_H

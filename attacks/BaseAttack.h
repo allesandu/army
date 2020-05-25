@@ -15,7 +15,7 @@ class BaseAttack {
         virtual void counterAttack(Unit* fighter, Unit* emeny);
         
         virtual void magicAttack(Unit* caster, int spellID, Unit* enemy);
-        virtual void bite(Unit* target);
+        // virtual void bite(Unit* target); // remove
 };
 
 #endif // BASEATTACK_H

@@ -3,6 +3,7 @@
 #include "Unit.h"
 #include "../attacks/WerewolfAttack.h"
 #include "../states/WerewolfState.h"
+#include "../abilities/WerewolfAbility.h"
 
 class Werewolf : public Unit {
     public:

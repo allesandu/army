@@ -4,5 +4,7 @@
 class UnitIsDead {};
 class OutOfMana {};
 class EnemyMagicResistant {};
+class NoSpecialAbility {};
+class NoSpecialAbilityBite {};
 
 #endif // EXCEPTIONS_H
