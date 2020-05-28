@@ -68,4 +68,34 @@ TEST_CASE("test Berserker", "[Berserker]") {
         REQUIRE( nm1->getMagicPower() == 130 );
         }
     }
+    
+    SECTION( "Berserker: no bite ability" ) {
+        try {
+        b1->action(h1);
+        } catch ( NoSpecialAbilityBite e ) {
+            REQUIRE( b1->getName() == "BERSERKER" );
+            REQUIRE( b1->getHitPoints() == 140 );
+            REQUIRE( b1->getMaxHitPoints() == 140 );
+            REQUIRE( b1->getDamage() == 70 );
+            REQUIRE( b1->isUndead() == false );
+            REQUIRE( b1->getMagicPower() == 0 );
+            REQUIRE( b1->getState()->getSpellCost(4) == 0 );
+            REQUIRE( b1->getState()->getSpellPower(4) == 0 );
+        }
+    }
+    
+    SECTION( "Berserker: no transform ability" ) {
+        try {
+            b1->action();
+        } catch ( NoSpecialAbilityTransform e ) {
+            REQUIRE( b1->getName() == "BERSERKER" );
+            REQUIRE( b1->getHitPoints() == 140 );
+            REQUIRE( b1->getMaxHitPoints() == 140 );
+            REQUIRE( b1->getDamage() == 70 );
+            REQUIRE( b1->isUndead() == false );
+            REQUIRE( b1->getMagicPower() == 0 );
+            REQUIRE( b1->getState()->getSpellCost(4) == 0 );
+            REQUIRE( b1->getState()->getSpellPower(4) == 0 );
+        }
+    }
 }

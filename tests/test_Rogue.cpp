@@ -17,7 +17,6 @@ TEST_CASE("test Rogue", "[Rogue]") {
     Rogue* r1 = new Rogue();
     
     Soldier* s1 = new Soldier();
-    // Rogue* r1 = new Rogue();
     Berserker* b1 = new Berserker();
     Vampire* v1 = new Vampire();
     Demon* d1 = new Demon();
@@ -65,5 +64,35 @@ TEST_CASE("test Rogue", "[Rogue]") {
         REQUIRE( p1->getHitPoints() == 30 );
         REQUIRE( wl1->getHitPoints() == 40 );
         REQUIRE( nm1->getHitPoints() == 130 );
+    }
+    
+    SECTION( "Rogue: no bite ability" ) {
+        try {
+            r1->action(s1);
+        } catch ( NoSpecialAbilityBite e ) {
+            REQUIRE( r1->getName() == "ROGUE" );
+            REQUIRE( r1->getHitPoints() == 160 );
+            REQUIRE( r1->getMaxHitPoints() == 160 );
+            REQUIRE( r1->getDamage() == 60 );
+            REQUIRE( r1->isUndead() == false );
+            REQUIRE( r1->getMagicPower() == 0);
+            REQUIRE( r1->getState()->getSpellCost(4) == 0 );
+            REQUIRE( r1->getState()->getSpellPower(4) == 0 );
+        }
+    }
+    
+    SECTION( "Rogue: no transform ability" ) {
+        try {
+            r1->action();
+        } catch ( NoSpecialAbilityTransform e ) {
+            REQUIRE( r1->getName() == "ROGUE" );
+            REQUIRE( r1->getHitPoints() == 160 );
+            REQUIRE( r1->getMaxHitPoints() == 160 );
+            REQUIRE( r1->getDamage() == 60 );
+            REQUIRE( r1->isUndead() == false );
+            REQUIRE( r1->getMagicPower() == 0);
+            REQUIRE( r1->getState()->getSpellCost(4) == 0 );
+            REQUIRE( r1->getState()->getSpellPower(4) == 0 );
+        }
     }
 }

@@ -13,9 +13,6 @@ TEST_CASE("test Priest", "[Priest]") {
     Priest* p1 = new Priest();
     Priest* p2 = new Priest();
     
-    // Wizard* wiz1 = new Wizard();
-    // Healer* h1 = new Healer();
-    // Priest* p1 = new Priest(); 
     Warlock* wl1 = new Warlock();
     Necromancer* nm1 = new Necromancer();
     
@@ -103,4 +100,39 @@ TEST_CASE("test Priest", "[Priest]") {
         REQUIRE( p2->getMagicPower() == 10 );
         }
     }
+    
+    SECTION( "Priest: no bite ability" ) {
+        try {
+            p1->action(wl1);
+        } catch ( NoSpecialAbilityBite e ) {
+            REQUIRE( p1->getName() == "PRIEST" );
+            REQUIRE( p1->getHitPoints() == 90 );
+            REQUIRE( p1->getMaxHitPoints() == 90 );
+            REQUIRE( p1->getDamage() == 25 );
+            REQUIRE( p1->isUndead() == false );
+            REQUIRE( p1->getMagicPower() == 80 );
+            REQUIRE( p1->getState()->getSpellCost(3) == 40 );
+            REQUIRE( p1->getState()->getSpellPower(3) == 35 );
+            REQUIRE( p1->getState()->getHealIndex() == 100 );
+            REQUIRE( p1->getState()->getBattleIndex() == 50 );
+        }
+    }
+    
+    SECTION( "Priest: no transform ability" ) {
+        try {
+            p1->action();
+        } catch ( NoSpecialAbilityTransform e ) {
+            REQUIRE( p1->getName() == "PRIEST" );
+            REQUIRE( p1->getHitPoints() == 90 );
+            REQUIRE( p1->getMaxHitPoints() == 90 );
+            REQUIRE( p1->getDamage() == 25 );
+            REQUIRE( p1->isUndead() == false );
+            REQUIRE( p1->getMagicPower() == 80 );
+            REQUIRE( p1->getState()->getSpellCost(3) == 40 );
+            REQUIRE( p1->getState()->getSpellPower(3) == 35 );
+            REQUIRE( p1->getState()->getHealIndex() == 100 );
+            REQUIRE( p1->getState()->getBattleIndex() == 50 );
+        }
+    }
+    
 }
