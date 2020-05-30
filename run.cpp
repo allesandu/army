@@ -239,9 +239,9 @@ int main() {
     // std::cout << "certain spell costs {[" << ms->getSpellCost(3) << "]} spellpoints" << std::endl;
     // delete ms;
     
-    Soldier* s1 = new Soldier();
-    std::cout << *s1 << std::endl;
-    std::cout << "==========================================================" << std::endl;
+    // Soldier* s1 = new Soldier();
+    // std::cout << *s1 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
     
     
     // Demon* d1 = new Demon();
@@ -262,10 +262,11 @@ int main() {
         
     // Werewolf* ww1 = new Werewolf();
     // std::cout << *ww1 << std::endl;
-    // // ww1->transform();
+    // s1->attack(ww1);
+    // ww1->action();
     // std::cout << "__________________________________" << std::endl;
-    // // std::cout << *ww1 << std::endl;
-    // // ww1->transform();
+    // std::cout << *ww1 << std::endl;
+    // // ww1->action();
     // // std::cout << "__________________________________" << std::endl;
     // // std::cout << *ww1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
@@ -292,24 +293,24 @@ int main() {
     // std::cout << "==========================================================" << std::endl;
     // h1->attack(w1);
     
-    Warlock* wl1 = new Warlock();
-    std::cout << *wl1 << std::endl;
-    std::cout << "==========================================================" << std::endl;
+    // Warlock* wl1 = new Warlock();
+    // std::cout << *wl1 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
     
-    std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
-    wl1->cast(SPELL::FIREBALL, s1);
-    std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
+    // std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
+    // wl1->cast(SPELL::FIREBALL, s1);
+    // std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
     
-    std::cout << *wl1 << *s1 << std::endl;
-    std::cout << "==========================================================" << std::endl;
+    // std::cout << *wl1 << *s1 << std::endl;
+    // std::cout << "==========================================================" << std::endl;
     
     // Necromancer* nm1 = new Necromancer();
     // std::cout << *nm1;
     // std::cout << "==========================================================" << std::endl;
     
-    wl1->cast(SPELL::MAGICARROW, s1);
-    std::cout << *wl1 << *s1 << std::endl;
-    std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
+    // wl1->cast(SPELL::MAGICARROW, s1);
+    // std::cout << *wl1 << *s1 << std::endl;
+    // std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
     
     // wl1->cast(SPELL::MAGICARROW, s1);
     // std::cout << "=== t e s t ======" << std::endl;

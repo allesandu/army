@@ -26,14 +26,10 @@ int State::getDamage() const {
 
 bool State::isUndead() const {
         return this->undead;
-    }
+}
 
 int State::getMagicPower() const {
     return 0;
-}
-
-void State::useMagicPower(int spCost) {
-    
 }
 
 int State::getHealIndex() const {
@@ -42,6 +38,23 @@ int State::getHealIndex() const {
 
 int State::getBattleIndex() const {
 
+}
+
+void State::useMagicPower(int spCost) {
+
+}
+
+int State::getHpLegacy() const {
+    int hpLegacy = 100;
+    
+    if ( this->hitPoints < this->maxHitPoints ) {
+        hpLegacy = 100 * this->hitPoints / this->maxHitPoints;
+    }
+    return hpLegacy;
+}
+
+void State::correctHp(int hpLegacy) {
+    this->hitPoints = hpLegacy * this->maxHitPoints / 100;
 }
 
 int State::getSpellCost(int spellID) const {
@@ -78,12 +91,12 @@ void State::takeHitPoints(Unit* caster, int spellID, Unit* target) {
 
 }
 
-void State::setState(State* newState) {
-    this->name = newState->name;
-    this->hitPoints = newState->hitPoints;
-    this->maxHitPoints = newState->maxHitPoints;
-    this->damage = newState->damage;
-}
+// void State::setState(State* newState) {
+//     this->name = newState->name;
+//     this->hitPoints = newState->hitPoints;
+//     this->maxHitPoints = newState->maxHitPoints;
+//     this->damage = newState->damage;
+// }
 
 std::ostream& operator<<(std::ostream& out, const State& state) {
     out << "State info: <" << state.getName() << "> ";

@@ -29,6 +29,9 @@ class State {
         virtual int getBattleIndex() const;
         virtual void useMagicPower(int spCost);
         
+        int getHpLegacy() const;
+        void correctHp(int hpLegacy);
+        
         virtual int getSpellCost(int spellID) const;
         virtual int getSpellPower(int spellID) const;
         virtual const std::string getSpellType(int spellID) const;
@@ -38,7 +41,7 @@ class State {
         void takeHitPoints(int addHP);
         virtual void takeHitPoints(Unit* caster, int spellID, Unit* target);
         
-        void setState(State* newState);
+        // void setState(State* newState);
     
 };
 

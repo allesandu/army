@@ -24,12 +24,3 @@ void VampireAttack::counterAttack(Unit* fighter, Unit* enemy) {
     fighter->takeHitPoints(enemy->getHitPoints()*hpIndex/100);
     fighter->takeDamage(enemy->getDamage()*attackReducer/100);
 }
-
-// void VampireAttack::bite(Unit* target){ // remove
-//     if ( target->getName() != "WEREWOLF" ) {
-//         if ( target->getName() != "WOLF" ) {
-//             target->setState(new VampireState());
-//             target->setAttack(new VampireAttack());
-//         }
-//     }
-// }

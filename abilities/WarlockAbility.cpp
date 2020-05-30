@@ -19,7 +19,7 @@ WarlockAbility::~WarlockAbility() {
 void WarlockAbility::action() {
     this->summon();
     
-    std::cout << "Demon has been summoned <WarlockAbility class>" << std::endl;
+    // std::cout << "Demon has been summoned <WarlockAbility class>" << std::endl; // remove
 }
 
 void WarlockAbility::summon() {

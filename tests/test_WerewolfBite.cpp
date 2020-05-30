@@ -63,6 +63,24 @@ TEST_CASE("test Werewolf_bite", "[bite]") {
     
     }
     
+    SECTION("Werewolf_bite: transformation from Soldier with hpLegacy") {
+        s2->attack(s1);
+        int ind = 100 * ( s1->getMaxHitPoints() - s2->getDamage() ) / s1->getMaxHitPoints();
+        
+        ww1->action(s1);
+        int newHp = ind * s1->getMaxHitPoints() / 100; // s1 is already Werewolf
+        
+        REQUIRE( s1->getName() == "WEREWOLF" );
+        REQUIRE( s1->getHitPoints() == newHp );
+        REQUIRE( s1->getMaxHitPoints() == 180);
+        REQUIRE( s1->getDamage() == 90 );
+        REQUIRE( s1->isUndead() == false );
+        REQUIRE( s1->getMagicPower() == 0 );
+        REQUIRE( s1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( s1->getState()->getSpellPower(4) == 0 );
+    
+    }
+    
     SECTION("Werewolf_bite: transformation from Rogue") {
         ww1->action(r1);
         r1->action(r2);
@@ -86,6 +104,23 @@ TEST_CASE("test Werewolf_bite", "[bite]") {
         REQUIRE( r2->getState()->getSpellPower(4) == 0 );
     }
     
+    SECTION("Werewolf_bite: transformation from Rogue with hpLegacy") {
+        r2->attack(r1);
+        int ind = 100 * ( r1->getMaxHitPoints() - r2->getDamage() ) / r1->getMaxHitPoints();
+        
+        ww1->action(r1);
+        int newHp = ind * r1->getMaxHitPoints() / 100;
+            
+        REQUIRE( r1->getName() == "WEREWOLF" );
+        REQUIRE( r1->getHitPoints() == newHp );
+        REQUIRE( r1->getMaxHitPoints() == 180);
+        REQUIRE( r1->getDamage() == 90 );
+        REQUIRE( r1->isUndead() == false );
+        REQUIRE( r1->getMagicPower() == 0 );
+        REQUIRE( r1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( r1->getState()->getSpellPower(4) == 0 );
+    }
+    
     SECTION("Werewolf_bite: transformation from Berserker") {
         ww1->action(b1);
         b1->action(b2);
@@ -107,6 +142,23 @@ TEST_CASE("test Werewolf_bite", "[bite]") {
         REQUIRE( b2->getMagicPower() == 0 );
         REQUIRE( b2->getState()->getSpellCost(4) == 0 );
         REQUIRE( b2->getState()->getSpellPower(4) == 0 );
+    }
+    
+    SECTION("Werewolf_bite: transformation from Berserker with hpLegacy") {
+        b2->attack(b1);
+        int ind = 100 * ( b1->getMaxHitPoints() - b2->getDamage() ) / b1->getMaxHitPoints();
+        
+        ww1->action(b1);
+        int newHp = ind * b1->getMaxHitPoints() / 100;
+        
+        REQUIRE( b1->getName() == "WEREWOLF" );
+        REQUIRE( b1->getHitPoints() == newHp);
+        REQUIRE( b1->getMaxHitPoints() == 180);
+        REQUIRE( b1->getDamage() == 90 );
+        REQUIRE( b1->isUndead() == false );
+        REQUIRE( b1->getMagicPower() == 0 );
+        REQUIRE( b1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( b1->getState()->getSpellPower(4) == 0 );
     }
     
     SECTION("Werewolf_bite: transformation from Vampire") {
@@ -135,6 +187,24 @@ TEST_CASE("test Werewolf_bite", "[bite]") {
         REQUIRE( v2->getState()->getSpellPower(4) == 0 );
     }
     
+    SECTION("Werewolf_bite: transformation from Vampire with hpLegacy") {
+        v2->attack(v1);
+        int ind = 100 * ( v1->getMaxHitPoints() - v2->getDamage() ) / v1->getMaxHitPoints();
+        
+        ww1->action(v1);
+        int newHp = ind * v1->getMaxHitPoints() / 100;
+        
+        
+        REQUIRE( v1->getName() == "VAMPIRE" );
+        REQUIRE( v1->getHitPoints() == newHp );
+        REQUIRE( v1->getMaxHitPoints() == 200);
+        REQUIRE( v1->getDamage() ==100 );
+        REQUIRE( v1->isUndead() == true );
+        REQUIRE( v1->getMagicPower() == 0 );
+        REQUIRE( v1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( v1->getState()->getSpellPower(4) == 0 );
+    }
+    
     SECTION("Werewolf_bite: transformation from Demon") {
         ww1->action(d1);
         d1->action(d2);
@@ -156,6 +226,23 @@ TEST_CASE("test Werewolf_bite", "[bite]") {
         REQUIRE( d2->getMagicPower() == 0 );
         REQUIRE( d2->getState()->getSpellCost(4) == 0 );
         REQUIRE( d2->getState()->getSpellPower(4) == 0 );
+    }
+    
+    SECTION("Werewolf_bite: transformation from Demon with hpLegacy") {
+        d2->attack(d1);
+        int ind = 100 * ( d1->getMaxHitPoints() - d2->getDamage() ) / d1->getMaxHitPoints();
+        
+        ww1->action(d1);
+        int newHp = ind * d1->getMaxHitPoints() / 100;
+        
+        REQUIRE( d1->getName() == "WEREWOLF" );
+        REQUIRE( d1->getHitPoints() == newHp );
+        REQUIRE( d1->getMaxHitPoints() == 180);
+        REQUIRE( d1->getDamage() == 90 );
+        REQUIRE( d1->isUndead() == false );
+        REQUIRE( d1->getMagicPower() == 0 );
+        REQUIRE( d1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( d1->getState()->getSpellPower(4) == 0 );
     }
     
     SECTION("Werewolf_bite: transformation from Wizard") {
@@ -181,6 +268,23 @@ TEST_CASE("test Werewolf_bite", "[bite]") {
         REQUIRE( wiz2->getState()->getSpellPower(4) == 0 );
     }
     
+    SECTION("Werewolf_bite: transformation from Wizard with hpLegacy") {
+        wiz2->attack(wiz1);
+        int ind = 100 * ( wiz1->getMaxHitPoints() - wiz2->getDamage() ) / wiz1->getMaxHitPoints();
+        
+        ww1->action(wiz1);
+        int newHp = ind * wiz1->getMaxHitPoints() / 100;
+        
+        REQUIRE( wiz1->getName() == "WEREWOLF" );
+        REQUIRE( wiz1->getHitPoints() == newHp );
+        REQUIRE( wiz1->getMaxHitPoints() == 180);
+        REQUIRE( wiz1->getDamage() == 90 );
+        REQUIRE( wiz1->isUndead() == false );
+        REQUIRE( wiz1->getMagicPower() == 0 );
+        REQUIRE( wiz1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( wiz1->getState()->getSpellPower(4) == 0 );
+    }
+    
     SECTION("Werewolf_bite: transformation from Healer") {
         ww1->action(h1);
         h1->action(h2);
@@ -202,6 +306,23 @@ TEST_CASE("test Werewolf_bite", "[bite]") {
         REQUIRE( h2->getMagicPower() == 0 );
         REQUIRE( h2->getState()->getSpellCost(4) == 0 );
         REQUIRE( h2->getState()->getSpellPower(4) == 0 );
+    }
+    
+    SECTION("Werewolf_bite: transformation from Healer with hpLegacy") {
+        h2->attack(h1);
+        int ind = 100 * ( h1->getMaxHitPoints() - h2->getDamage() ) / h1->getMaxHitPoints();
+        
+        ww1->action(h1);
+        int newHp = ind * h1->getMaxHitPoints() / 100;
+        
+        REQUIRE( h1->getName() == "WEREWOLF" );
+        REQUIRE( h1->getHitPoints() == newHp );
+        REQUIRE( h1->getMaxHitPoints() == 180);
+        REQUIRE( h1->getDamage() == 90 );
+        REQUIRE( h1->isUndead() == false );
+        REQUIRE( h1->getMagicPower() == 0 );
+        REQUIRE( h1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( h1->getState()->getSpellPower(4) == 0 );
     }
     
     SECTION("Werewolf_bite: transformation from Priest") {
@@ -227,6 +348,23 @@ TEST_CASE("test Werewolf_bite", "[bite]") {
         REQUIRE( p2->getState()->getSpellPower(4) == 0 );
     }
     
+    SECTION("Werewolf_bite: transformation from Priest with hpLegacy") {
+        p2->attack(p1);
+        int ind = 100 * ( p1->getMaxHitPoints() - p2->getDamage() ) / p1->getMaxHitPoints();
+        
+        ww1->action(p1);
+        int newHp = ind * p1->getMaxHitPoints() / 100;
+        
+        REQUIRE( p1->getName() == "WEREWOLF" );
+        REQUIRE( p1->getHitPoints() == newHp );
+        REQUIRE( p1->getMaxHitPoints() == 180);
+        REQUIRE( p1->getDamage() == 90 );
+        REQUIRE( p1->isUndead() == false );
+        REQUIRE( p1->getMagicPower() == 0 );
+        REQUIRE( p1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( p1->getState()->getSpellPower(4) == 0 );
+    }
+    
     SECTION("Werewolf_bite: transformation from Warlock") {
         ww1->action(wl1);
         wl1->action(wl2);
@@ -250,6 +388,23 @@ TEST_CASE("test Werewolf_bite", "[bite]") {
         REQUIRE( wl2->getState()->getSpellPower(4) == 0 );
     }
     
+    SECTION("Werewolf_bite: transformation from Warlock wirh hpLegacy") {
+        wl2->attack(wl1);
+        int ind = 100 * ( wl1->getMaxHitPoints() - wl2->getDamage() ) / wl1->getMaxHitPoints();
+        
+        ww1->action(wl1);
+        int newHp = ind * wl1->getMaxHitPoints() / 100;
+        
+        REQUIRE( wl1->getName() == "WEREWOLF" );
+        REQUIRE( wl1->getHitPoints() == newHp );
+        REQUIRE( wl1->getMaxHitPoints() == 180);
+        REQUIRE( wl1->getDamage() == 90 );
+        REQUIRE( wl1->isUndead() == false );
+        REQUIRE( wl1->getMagicPower() == 0 );
+        REQUIRE( wl1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( wl1->getState()->getSpellPower(4) == 0 );
+    }
+    
     SECTION("Werewolf_bite: transformation from Necromancer") {
         ww1->action(nm1);
         nm1->action(nm2);
@@ -271,5 +426,22 @@ TEST_CASE("test Werewolf_bite", "[bite]") {
         REQUIRE( nm2->getMagicPower() == 0 );
         REQUIRE( nm2->getState()->getSpellCost(4) == 0 );
         REQUIRE( nm2->getState()->getSpellPower(4) == 0 );
+    }
+    
+    SECTION("Werewolf_bite: transformation from Necromancer with hpLegacy") {
+        nm2->attack(nm1);
+        int ind = 100 * ( nm1->getMaxHitPoints() - nm2->getDamage() ) / nm1->getMaxHitPoints();
+        
+        ww1->action(nm1);
+        int newHp = ind * nm1->getMaxHitPoints() / 100;
+        
+        REQUIRE( nm1->getName() == "WEREWOLF" );
+        REQUIRE( nm1->getHitPoints() == newHp );
+        REQUIRE( nm1->getMaxHitPoints() == 180);
+        REQUIRE( nm1->getDamage() == 90 );
+        REQUIRE( nm1->isUndead() == false );
+        REQUIRE( nm1->getMagicPower() == 0 );
+        REQUIRE( nm1->getState()->getSpellCost(4) == 0 );
+        REQUIRE( nm1->getState()->getSpellPower(4) == 0 );
     }
 }

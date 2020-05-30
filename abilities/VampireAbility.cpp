@@ -7,7 +7,7 @@ VampireAbility::~VampireAbility() {}
 void VampireAbility::action(Unit* target) {
     this->bite(target);
     
-    std::cout << "Transformation to Vampire done <VampireAbility class>" << std::endl;
+    // std::cout << "Transformation to Vampire done <VampireAbility class>" << std::endl; // remove
 }
 
 void VampireAbility::bite(Unit* target) {

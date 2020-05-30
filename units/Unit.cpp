@@ -112,17 +112,20 @@ void Unit::takeHitPoints(int enemyHP) {
 }
 
 void Unit::setState(State* newState) {
+    int hpLegacy = this->uState->getHpLegacy();
+    
     delete this->uState;
-
+    
     this->uState = newState;
-
+    if ( hpLegacy != 100 ) {
+        this->uState->correctHp(hpLegacy);
+    }
 }
 
 void Unit::setAttack(BaseAttack* newAttack) {
     delete this->uAttack;
-
+    
     this->uAttack = newAttack;
-
 }
 
 void Unit::setAbility(Ability* newAbility) {

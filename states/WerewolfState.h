@@ -1,7 +1,6 @@
 #ifndef WEREWOLFSTATE_H
 #define WEREWOLFSTATE_H
 #include "State.h"
-// #include "WolfState.h"// remove
 #include "../config.h"
 
 class WerewolfState : public State {
@@ -13,7 +12,6 @@ class WerewolfState : public State {
         
         virtual ~WerewolfState();
         
-        // virtual void transform(); // remove
 };
 
 #endif // WEREWOLFSTATE_H
