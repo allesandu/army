@@ -17,5 +17,5 @@ void MagicAttack::magicAttack(Unit* caster, int spellID, Unit* target) {
         wolfInd = 120;
     }
     
-    target->takeDamage(dmg*bInd*wolfInd/100/100);
+    target->takeMagicDamage(dmg*bInd*wolfInd/100/100);
 }

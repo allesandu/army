@@ -25,22 +25,11 @@ void Unit::Update(IObservable* victim) {
     std::cout << "\ts t a t u s || VICTIM WAS BITTEN BY _ " << this->getName() << std::endl;
 }
 
-// bool Unit::isAlive() {
-//     return this->getHitPoints() > 0;
-// }
-
 void Unit::ensureIsAlive() {
     if ( this->getHitPoints() == 0 ) {
         throw UnitIsDead();
     }
 }
-
-// Unit::Unit(State* state, BaseAttack* attack)
-//     : uState(state),
-//     uAttack(attack) {
-    
-//     this->lstObserv = new std::set<IObserver*>();
-// }
 
 Unit::Unit(State* state, BaseAttack* attack, Ability* ability)
     : uState(state),
@@ -98,10 +87,24 @@ void Unit::takeDamage(int uDmg) {
         this->Notify();
     } else {
         finalDmg = uDmg;
-        // this->uState->takeDamage(uDmg);
     }
     
     this->uState->takeDamage(finalDmg);
+}
+
+void Unit::takeMagicDamage(int magDmg) {
+    ensureIsAlive();
+
+    int finalDmg = this->getHitPoints();
+    int finalHP = finalDmg - magDmg;
+    
+    if ( finalHP <= 0 ) {
+        this->Notify();
+    } else {
+        finalDmg = magDmg;
+    }
+    
+    this->uState->takeMagicDamage(finalDmg);
 }
 
 void Unit::takeHitPoints(int enemyHP) {
@@ -166,21 +169,6 @@ void Unit::cast(int spellID, Unit* target) {
         this->uState->takeHitPoints(this, spellID, target);
     }
 }
-
-// void Unit::cast() { // remove
-//     if ( this->getName() == "WARLOCK" ) {
-//         this->castImplement(SPELL::SUMMONSPELL);
-//         this->uAbility->action();
-//     }
-// }
-
-// void Unit::transform() {
-//     this->uState->transform();
-// }
-
-// void Unit::bite(Unit* target) { // remove
-//     this->uAttack->bite(target);
-// }
 
 void Unit::action() {
     if ( this->getName() == "WARLOCK" ) {

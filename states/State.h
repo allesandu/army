@@ -34,14 +34,12 @@ class State {
         virtual const std::string getSpellType(int spellID) const;
         
         void takeDamage(int stateDmg);
+        void takeMagicDamage(int magDmg);
         void takeHitPoints(int addHP);
         virtual void takeHitPoints(Unit* caster, int spellID, Unit* target);
         
         void setState(State* newState);
-        
-        // virtual void transform();
-        // virtual void summon(); // remove
-        
+    
 };
 
 std::ostream& operator<<(std::ostream& out, const State& state);

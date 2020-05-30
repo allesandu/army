@@ -28,8 +28,6 @@ class Unit : public IObserver, public IObservable {
         virtual void Notify();
         virtual void Update(IObservable* victim);
         
-        
-        // Unit(State* state, BaseAttack* attack);
         Unit(State* state, BaseAttack* attack, Ability* ability);
         
         virtual ~Unit();
@@ -45,6 +43,7 @@ class Unit : public IObserver, public IObservable {
         BaseAttack* getAttack() const;
         
         void takeDamage(int uStateDmg);
+        void takeMagicDamage(int magDmg);
         void takeHitPoints(int enemyHP);
         
         void setState(State* newState);
@@ -56,13 +55,9 @@ class Unit : public IObserver, public IObservable {
         
         void castImplement(int spellID);
         void cast(int spellID, Unit* target);
-        // void cast();// special for Warlock
-        
-        // void transform(); // remove
-        // void bite(Unit* target); // remove
         
         void action();// special for Warlock
-        void action(Unit* target); // virtual void action(Unit* target) = 0; - maybe not needed
+        void action(Unit* target);
 };
 
 std::ostream& operator<<(std::ostream& out, const Unit& unit);

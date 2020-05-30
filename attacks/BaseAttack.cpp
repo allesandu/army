@@ -23,7 +23,3 @@ void BaseAttack::counterAttack(Unit* fighter, Unit* enemy) {
 void BaseAttack::magicAttack(Unit* caster, int spellID, Unit* target) {
 
 }
-
-// void BaseAttack::bite(Unit* target) { // remove
-
-// }

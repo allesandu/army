@@ -60,6 +60,10 @@ void State::takeDamage(int dmg) {
     this->hitPoints -= dmg;
 }
 
+void State::takeMagicDamage(int magDmg) {
+    this->hitPoints -= magDmg;
+}
+
 void State::takeHitPoints(int addHP) {
     int newHP = this->hitPoints + addHP;
     
@@ -80,14 +84,6 @@ void State::setState(State* newState) {
     this->maxHitPoints = newState->maxHitPoints;
     this->damage = newState->damage;
 }
-
-// void State::transform() { // remove
-
-// }
-
-// void State::summon() { // remove
-
-// }
 
 std::ostream& operator<<(std::ostream& out, const State& state) {
     out << "State info: <" << state.getName() << "> ";
