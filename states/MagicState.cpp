@@ -1,7 +1,12 @@
 #include "MagicState.h"
 
 MagicState::MagicState(const std::string& name, int maxHp, int dmg, bool undeadStatus, int mPower, int hInd, int bInd)
-     : State(name, maxHp, dmg, undeadStatus), magicPower(mPower), healIndex(hInd), battleIndex(bInd), spBook(new SpellBook()) {
+                         : State(name, maxHp, dmg, undeadStatus)
+                         , magicPower(mPower)
+                         , healIndex(hInd)
+                         , battleIndex(bInd)
+                         , spBook(new SpellBook()) {
+                         // , spBook(SpellBook::getSpellBook()) { // for Singleton
 }
 
 MagicState::~MagicState() {

@@ -10,6 +10,7 @@ class MagicState : public State {
         int healIndex;
         int battleIndex;
         SpellBook* spBook;
+        // SpellBook spBook;
         
     public:
         MagicState(const std::string& name = "noNameSpeller",

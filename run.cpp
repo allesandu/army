@@ -36,8 +36,9 @@
 
 int main() {
     // =======================================================================================
-    // ============================= MAGIC BOOK CHECKING =====================================
-    // SpellBook* spB = new SpellBook();
+    //============================= MAGIC BOOK CHECKING =====================================
+    // SpellBook* spB = new SpellBook(); // was before Singleton
+    // SpellBook* spB = SpellBook::getSpellBook();
     // spB->addSpell(2, new RestoreHP());
     // spB->addSpell(3, new MagicArrow());
     // std::cout << "Spell list contains: " << spB->getSpellCount() << " spells" << std::endl;
@@ -53,7 +54,7 @@ int main() {
     // std::cout << *spB << std::endl;
     
     // delete spB;
-    // =======================================================================================
+    // //=======================================================================================
     // =======================================================================================
     
     // =======================================================================================
@@ -100,7 +101,7 @@ int main() {
     // =======================================================================================
     
     // =======================================================================================
-    // ============================= ATTACK CHECKING ==========================================
+    // ============================= ATTACK ERROR CHECK ==========================================
     // std::cout << "_____________________BASEATTACK " << std::endl;
     // BaseAttack* ba1 = new BaseAttack();
     // std::cout << "obj_value = " << ba1;
@@ -226,31 +227,18 @@ int main() {
     
     // =======================================================================================
     // =======================================================================================
-    // Wizard* w1 = new Wizard();
-    // std::cout << *w1;
-    // std::cout << "__________________________________________________________" << std::endl;
-    // std::cout << *(w1->getState()) << std::endl;
-    // std::cout << "==========================================================" << std::endl;
-    // w1->cast(3, s1);
-    // w1->cast(2, s1);
-    // w1->attack(s1);
     
     // MagicState* ms = new MagicState();
     // std::cout << "certain spell costs {[" << ms->getSpellCost(3) << "]} spellpoints" << std::endl;
     // delete ms;
     
-    // Soldier* s1 = new Soldier();
-    // std::cout << *s1 << std::endl;
-    // std::cout << "==========================================================" << std::endl;
-    
-    
     // Demon* d1 = new Demon();
     // std::cout << *d1 << std::endl;
     // delete d1;
     // std::cout << "__________________________________________________________" << std::endl;
-    // Vampire* v1 = new Vampire();
-    // std::cout << *v1 << std::endl;
-    // std::cout << "==========================================================" << std::endl;
+    Vampire* v1 = new Vampire();
+    std::cout << *v1 << std::endl;
+    std::cout << "==========================================================" << std::endl;
     
     // Rogue* r2 = new Rogue();
     // std::cout << *r2 << std::endl;
@@ -271,9 +259,17 @@ int main() {
     // // std::cout << *ww1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
     
-    // Wizard* wiz1 = new Wizard();
-    // std::cout << *wiz1 << std::endl;
+    // Soldier* s1 = new Soldier();
+    // std::cout << *s1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
+    
+    Wizard* wiz1 = new Wizard();
+    std::cout << *wiz1 << std::endl;
+    std::cout << "==========================================================" << std::endl;
+    
+    Wizard* wiz2 = new Wizard();
+    std::cout << *wiz2 << std::endl;
+    std::cout << "==========================================================" << std::endl;
     
     // Healer* h1 = new Healer();
     // std::cout << *h1;
@@ -287,18 +283,19 @@ int main() {
     // std::cout << *(p1->getState()) << std::endl;
     // std::cout << "==========================================================" << std::endl;
     
-    // w1->cast(2, s1);
+    // wiz1->cast(SPELL::FIREBALL, s1);
+    // wiz1->cast(SPELL::RESTOREHP, s1);
     
-    // std::cout << *w1 << *h1 << std::endl;
+    // std::cout << *s1 << *wiz1 << *h1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
-    // h1->attack(w1);
+    // h1->attack(wiz1);
     
     // Warlock* wl1 = new Warlock();
     // std::cout << *wl1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
     
     // std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
-    // wl1->cast(SPELL::FIREBALL, s1);
+    // wl1->cast(SPELL::MAGICARROW, s1);
     // std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
     
     // std::cout << *wl1 << *s1 << std::endl;
@@ -321,14 +318,14 @@ int main() {
     
     // std::cout << *wl1 << *s1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
-    // h1->attack(w1);
+    // h1->attack(wiz1);
     
-    // std::cout << *w1 << *h1 << std::endl;
+    // std::cout << *wiz1 << *h1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
-    // h1->attack(w1);
-    // h1->attack(w1);
+    // h1->attack(wiz1);
+    // h1->attack(wiz1);
     
-    // std::cout << *w1 << *h1 << std::endl;
+    // std::cout << *wiz1 << *h1 << std::endl;
 
     // r1->attack(s1);
     // s1->attack(nm1);
@@ -336,7 +333,7 @@ int main() {
     // std::cout << *s1 << *r1 << *nm1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
     // r1->attack(s1);
-    // v1->action(s1);
+    v1->action(wiz1);
     // v1->action(r1);
     // v1->transform();
     // ww1->action(s1);
@@ -345,13 +342,17 @@ int main() {
     // ww1->transform();
     // ww1->action(r1);
     
-    // std::cout << *s1 << *v1 << std::endl;
-    // std::cout << "==========================================================" << std::endl;
-    // s1->action(b1);
+    std::cout << *wiz1 << *v1 << *wiz2 << std::endl;
+    std::cout << "==========================================================" << std::endl;
+    
+    wiz1->action(wiz2);
+    
+    std::cout << *wiz1 << *v1 << *wiz2 << std::endl;
+    std::cout << "==========================================================" << std::endl;
     // std::cout << "----------------- Attack has been organized! ---\n";
     // std::cout << *s1 << *v1 << *b1 << std::endl;
     // std::cout << "==========================================================" << std::endl;
-    // std::cout << *s1 << *w1 << *v1 << *ww1 << std::endl;
+    // std::cout << *s1 << *wiz1 << *v1 << *ww1 << std::endl;
     // delete s1;
     // delete r1;
     // delete r2;

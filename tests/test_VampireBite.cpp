@@ -10,6 +10,7 @@
 #include "../units/Warlock.h"
 #include "../units/Necromancer.h"
 #include "catch.hpp"
+#include "../config.h"
 
 TEST_CASE("test Vampire_bite", "[bite]") {
     Vampire* v1 = new Vampire();
@@ -164,8 +165,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
         REQUIRE( wiz1->getDamage() == 100 );
         REQUIRE( wiz1->isUndead() == true );
         REQUIRE( wiz1->getMagicPower() == 0 );
-        REQUIRE( wiz1->getState()->getSpellCost(4) == 0 );
-        REQUIRE( wiz1->getState()->getSpellPower(4) == 0 );
+        REQUIRE( wiz1->getState()->getSpellCost(SPELL::RESTOREHP) == 0 );
+        REQUIRE( wiz1->getState()->getSpellPower(SPELL::RESTOREHP) == 0 );
         
         REQUIRE( wiz2->getName() == "VAMPIRE" );
         REQUIRE( wiz2->getHitPoints() == 200 );
@@ -173,8 +174,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
         REQUIRE( wiz2->getDamage() == 100 );
         REQUIRE( wiz2->isUndead() == true );
         REQUIRE( wiz2->getMagicPower() == 0 );
-        REQUIRE( wiz2->getState()->getSpellCost(4) == 0 );
-        REQUIRE( wiz2->getState()->getSpellPower(4) == 0 );
+        REQUIRE( wiz2->getState()->getSpellCost(SPELL::FIREBALL) == 0 );
+        REQUIRE( wiz2->getState()->getSpellPower(SPELL::FIREBALL) == 0 );
     }
     
     SECTION("Vampire_bite: transformation from Healer") {
@@ -196,8 +197,8 @@ TEST_CASE("test Vampire_bite", "[bite]") {
         REQUIRE( h2->getDamage() == 100 );
         REQUIRE( h2->isUndead() == true );
         REQUIRE( h2->getMagicPower() == 0 );
-        REQUIRE( h2->getState()->getSpellCost(4) == 0 );
-        REQUIRE( h2->getState()->getSpellPower(4) == 0 );
+        REQUIRE( h2->getState()->getSpellCost(SPELL::FIREBALL) == 0 );
+        REQUIRE( h2->getState()->getSpellPower(SPELL::FIREBALL) == 0 );
     }
     
     SECTION("Vampire_bite: transformation from Priest") {

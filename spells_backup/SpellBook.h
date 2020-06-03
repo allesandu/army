@@ -13,17 +13,13 @@ class SpellBook {
     protected:
         std::map<int, BaseSpell*>* spellList;
         
-    // private: // for Singleton
-    //     SpellBook();
-        
     public:
         SpellBook();
         ~SpellBook();
         
-        // static SpellBook* spBook; // for Singleton
-        // static SpellBook* getSpellBook(); // for Singleton
-        
         int getSpellCount() const;
+        
+        //----------------------------------
         int getSpellCost(int spellID) const;
         int getSpellPower(int spellID) const;
         const std::string getSpellName(int spellID) const;

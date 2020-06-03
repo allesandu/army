@@ -53,7 +53,6 @@ enum class POWER {
     SUMMONSPELL = 20
 };
 
-// enum class SPELL {
 enum SPELL {
     BASESPELL = 0,
     RESTOREHP,

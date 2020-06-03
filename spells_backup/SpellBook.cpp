@@ -14,19 +14,11 @@ SpellBook::~SpellBook() {
     delete this->spellList;
 };
 
-// SpellBook* SpellBook::spBook = nullptr; // for Singleton
-
-// SpellBook* SpellBook::getSpellBook() { // for Singleton
-//     if ( !SpellBook::spBook ) {
-//         SpellBook::spBook = new SpellBook();
-//     }
-//     return SpellBook::spBook;
-// }
-
 int SpellBook::getSpellCount() const {
     return this->spellList->size();
 }
 
+//----------------------------------------------
 int SpellBook::getSpellCost(int spellID) const {
     return this->spellList->find(spellID)->second->getSpellCost();
 }
