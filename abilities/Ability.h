@@ -10,7 +10,7 @@ class Ability {
         Ability();
         virtual ~Ability();
         
-        virtual void action(Unit* target);
+        virtual void bite(Unit* target);
         virtual void action();
         virtual void transform(Unit* werewolf);
 };

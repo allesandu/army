@@ -8,20 +8,28 @@ SpellBook::SpellBook() {
     this->spellList->insert(std::pair<int, BaseSpell*>(SPELL::RESTOREHP, new RestoreHP()));
     this->spellList->insert(std::pair<int, BaseSpell*>(SPELL::MAGICARROW, new MagicArrow()));
     this->spellList->insert(std::pair<int, BaseSpell*>(SPELL::SUMMONSPELL, new SummonSpell()));
+    
+    // std::cout << "********** spBook created" << std::endl;
 }
 
 SpellBook::~SpellBook() {
-    delete this->spellList;
+    // std::cout << "********** spBook to delete" << std::endl;
+    
+    if ( this->spellList ) {
+        delete this->spellList;
+    }
+    
+    // std::cout << "********** spBook IS deleted" << std::endl;
 };
 
-// SpellBook* SpellBook::spBook = nullptr; // for Singleton
+SpellBook* SpellBook::spBook = nullptr; // for Singleton
 
-// SpellBook* SpellBook::getSpellBook() { // for Singleton
-//     if ( !SpellBook::spBook ) {
-//         SpellBook::spBook = new SpellBook();
-//     }
-//     return SpellBook::spBook;
-// }
+SpellBook* SpellBook::getSpellBook() { // for Singleton
+    if ( !SpellBook::spBook ) {
+        SpellBook::spBook = new SpellBook();
+    }
+    return SpellBook::spBook;
+}
 
 int SpellBook::getSpellCount() const {
     return this->spellList->size();

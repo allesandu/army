@@ -14,7 +14,6 @@ class WerewolfAbility : public Ability {
         WerewolfAbility();
         virtual ~WerewolfAbility();
         
-        void action(Unit* target);
         void bite(Unit* target);
         
         void transform(Unit* werewolf);

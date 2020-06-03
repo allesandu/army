@@ -335,11 +335,11 @@ int main() {
     // r1->attack(s1);
     v1->action(wiz1);
     // v1->action(r1);
-    // v1->transform();
+    // v1->action();
     // ww1->action(s1);
     // ww1->action(r1);
     // ww1->action(v1);
-    // ww1->transform();
+    // ww1->action();
     // ww1->action(r1);
     
     std::cout << *wiz1 << *v1 << *wiz2 << std::endl;
@@ -357,10 +357,11 @@ int main() {
     // delete r1;
     // delete r2;
     // delete b1;
-    // delete v1;
+    delete v1;
     // delete ww1;
     
-    // delete wiz1;
+    delete wiz1;
+    // delete wiz2;
     // delete h1;
     // delete p1;
     // delete wl1;

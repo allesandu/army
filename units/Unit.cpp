@@ -183,7 +183,7 @@ void Unit::action() {
 }
 
 void Unit::action(Unit* target) {
-    this->uAbility->action(target);
+    this->uAbility->bite(target);
 }
 
 std::ostream& operator<<(std::ostream& out, const Unit& unit) {

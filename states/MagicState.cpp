@@ -5,12 +5,20 @@ MagicState::MagicState(const std::string& name, int maxHp, int dmg, bool undeadS
                          , magicPower(mPower)
                          , healIndex(hInd)
                          , battleIndex(bInd)
-                         , spBook(new SpellBook()) {
-                         // , spBook(SpellBook::getSpellBook()) { // for Singleton
+                         // , spBook(new SpellBook()) {
+                         , spBook(SpellBook::getSpellBook()) { // for Singleton
+                            
+// std::cout << "********** MagicState created" << std::endl;
 }
 
 MagicState::~MagicState() {
-    delete this->spBook;
+    // std::cout << "********** MagicState to delete" << std::endl;
+    
+    if ( this->spBook ) {
+        delete this->spBook;
+    }
+    
+    // std::cout << "********** MagicState IS deleted" << std::endl;
 }
 
 int MagicState::getSpellCost(int spellID) const {

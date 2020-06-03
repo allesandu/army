@@ -4,7 +4,7 @@ Ability::Ability() {}
 
 Ability::~Ability() {}
 
-void Ability::action(Unit* target) {
+void Ability::bite(Unit* target) {
     throw NoSpecialAbilityBite();
 }
 

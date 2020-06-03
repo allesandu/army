@@ -4,12 +4,6 @@ VampireAbility::VampireAbility() : Ability() {}
 
 VampireAbility::~VampireAbility() {}
 
-void VampireAbility::action(Unit* target) {
-    this->bite(target);
-    
-    // std::cout << "Transformation to Vampire done <VampireAbility class>" << std::endl; // remove
-}
-
 void VampireAbility::bite(Unit* target) {
     if ( target->getName() != "WEREWOLF" ) {
         if ( target->getName() != "WOLF" ) {
